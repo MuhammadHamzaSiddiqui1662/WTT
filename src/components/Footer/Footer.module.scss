@@ -1,0 +1,31 @@
+.wrapper {
+  width: 100%;
+  background-color: #222;
+  color: var(--color-grey);
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 60px 80px 20px;
+}
+.risk {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+.heading {
+  width: 100%;
+  margin-top: 30px;
+  font-weight: bold;
+}
+.description {
+  text-align: justify;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.bottomNav {
+  padding: 8px 0px;
+}
