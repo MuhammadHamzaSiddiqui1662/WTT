@@ -1,0 +1,29 @@
+.container {
+  text-align: center;
+  padding: 0px 24px;
+}
+.topSection {
+  max-width: 800px;
+  margin: 0px auto;
+}
+.punchLine {
+  color: var(--color-primary);
+  padding: 120px 0px 20px 0px;
+}
+.heading {
+  font-size: 34px;
+  padding: 20px 0px;
+}
+.description {
+  padding: 0px 50px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .button {
+    width: 300px;
+    margin-top: 24px;
+  }
+}
