@@ -1,0 +1,41 @@
+.container {
+  text-align: center;
+  padding: 0px 24px;
+}
+.topSection {
+  width: 100%;
+}
+.punchLine {
+  color: var(--color-primary);
+  padding: 80px 0px 20px 0px;
+  font-size: 22px;
+}
+.description {
+  padding: 0px 50px 50px;
+}
+.heading {
+  font-size: 34px;
+  padding: 20px 0px;
+  text-align: left;
+}
+.list {
+  text-align: left;
+  padding-left: 40px;
+}
+.list > li {
+  padding: 12px 0px;
+}
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  column-gap: 30px;
+  padding-top: 20px;
+  max-width: 900px;
+  margin: 0px auto;
+
+  .button {
+    width: 300px;
+    margin-top: 24px;
+  }
+}
