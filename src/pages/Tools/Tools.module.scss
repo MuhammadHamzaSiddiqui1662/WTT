@@ -1,0 +1,40 @@
+.container {
+  padding: 0px 24px;
+}
+.section {
+  padding: 0px 30px;
+}
+.para {
+  font-size: 18px;
+}
+.prompt {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+.list {
+  padding: 24px 10px 24px 50px;
+}
+.list li {
+  list-style: square;
+  padding: 10px;
+}
+.listExtra {
+  color: var(--color-grey);
+}
+.toolCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  row-gap: 24px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .toolCards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 860px) {
+  .toolCards {
+    grid-template-columns: 1fr;
+  }
+}
