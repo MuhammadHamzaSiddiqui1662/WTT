@@ -1,0 +1,24 @@
+.container {
+  padding: 0px 24px;
+}
+
+.section {
+}
+
+.notesCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  row-gap: 24px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .notesCards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 860px) {
+  .notesCards {
+    grid-template-columns: 1fr;
+  }
+}
