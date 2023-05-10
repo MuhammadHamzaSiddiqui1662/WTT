@@ -8,14 +8,17 @@ import { Button } from "src/components/Button/Button";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
 import { LabeledRadioButton } from "src/components/LabeledRadioButton/LabeledRadioButton";
 import { PaypalSubscribeButton } from "src/components/PaypalSubscribeButton/PaypalSubscribeButton";
+import { SubscribeModal } from "src/modals/SubscribeModal/SubscribeModal";
 
 export const Subscribe: FC = () => {
+  const [openModal, setOpenModal] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log(name, email, message);
+    setOpenModal(true);
   };
   return (
     <Page>
@@ -23,7 +26,6 @@ export const Subscribe: FC = () => {
         <PageHeading heading={"Subscribe"} description="" />
         <div className={styles.topSection} data-aos="zoom-out" data-aos-delay="600" data-aos-duration="1100">
           <p className={styles.punchLine}>BECOME A MEMBER</p>
-          {/* <SectionHeading heading="BECOME A MEMBER" /> */}
           <p className={styles.description}>You are about to bcome a member of AZUR ZONE FOR ES (E-mini S&P 500 ES)</p>
           <h1 className={styles.heading}>Before Becoming a Member:</h1>
           <ol className={styles.list}>
@@ -148,6 +150,7 @@ export const Subscribe: FC = () => {
             </div>
           </form>
         </div>
+        {openModal && <SubscribeModal handleClose={() => setOpenModal(false)} />}
       </div>
     </Page>
   );
