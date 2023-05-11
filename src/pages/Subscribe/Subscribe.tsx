@@ -7,7 +7,6 @@ import { LabeledTextarea } from "src/components/LabeledTextarea/LabeledTextarea"
 import { Button } from "src/components/Button/Button";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
 import { LabeledRadioButton } from "src/components/LabeledRadioButton/LabeledRadioButton";
-import { PaypalSubscribeButton } from "src/components/PaypalSubscribeButton/PaypalSubscribeButton";
 import { SubscribeModal } from "src/modals/SubscribeModal/SubscribeModal";
 
 export const Subscribe: FC = () => {
@@ -145,12 +144,9 @@ export const Subscribe: FC = () => {
                 Subscribe
               </Button>
             </div>
-            <div style={{ gridColumn: "1 / span 2" }}>
-              <PaypalSubscribeButton />
-            </div>
           </form>
         </div>
-        {openModal && <SubscribeModal handleClose={() => setOpenModal(false)} />}
+        {openModal && <SubscribeModal handleClose={() => setOpenModal(false)} data={{}} />}
       </div>
     </Page>
   );
