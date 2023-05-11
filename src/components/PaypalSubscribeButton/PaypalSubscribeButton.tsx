@@ -1,6 +1,6 @@
 import { PayPalButtons } from "@paypal/react-paypal-js";
 
-export const PaypalSubscribeButton = () => {
+export const PaypalSubscribeButton = ({ disabled }: { disabled: boolean }) => {
   const handleApprove = async (data: any, action: any) => {
     console.log("running handleApprove...");
     console.log("action", action);
@@ -9,6 +9,7 @@ export const PaypalSubscribeButton = () => {
   };
   return (
     <PayPalButtons
+      disabled={disabled}
       createSubscription={(data, actions) => {
         return actions.subscription
           .create({
