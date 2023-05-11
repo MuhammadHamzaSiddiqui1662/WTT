@@ -1,7 +1,7 @@
 .container {
   background: url(../../assets/images/trade__bg.png) no-repeat 100% 0;
   background-size: cover;
-  height: 580px;
+  min-height: 580px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0px 24px;
