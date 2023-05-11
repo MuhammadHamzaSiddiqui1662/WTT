@@ -11,18 +11,17 @@ export const Home: FC = () => {
           <h1
             className={styles.heading}
             data-aos="fade-right"
-            data-aos-delay="400"
             data-aos-duration="1000"
-            data-aos-anchor-placement="top-bottom"
+            // data-aos-anchor-placement="top-bottom"
           >
             Bringing your trading experience to a higher level, using my edge.
           </h1>
           <p
             className={styles.description}
             data-aos="fade-left"
-            data-aos-delay="600"
+            data-aos-delay="200"
             data-aos-duration="1000"
-            data-aos-anchor-placement="top-bottom"
+            // data-aos-anchor-placement="top-bottom"
           >
             Trading is a challenging field, and having an edge can make all the difference. Stay one step ahead of the
             game by using proven approach and insights to navigate the dynamic world of trading. Let my edge sharpen
@@ -31,9 +30,9 @@ export const Home: FC = () => {
           </p>
           <Button
             data-aos="fade-up"
-            data-aos-delay="500"
+            data-aos-delay="200"
             data-aos-duration="1000"
-            data-aos-anchor-placement="top-bottom"
+            // data-aos-anchor-placement="top-bottom"
           >
             Get Started
           </Button>
