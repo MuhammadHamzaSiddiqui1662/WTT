@@ -16,6 +16,11 @@
   width: 280px;
 }
 
+.menuIcon {
+  display: none;
+  cursor: pointer;
+}
+
 .routes {
   display: flex;
   align-items: center;
@@ -36,4 +41,83 @@
 
 .routes li.active {
   border-bottom: 2px solid var(--color-primary);
+}
+
+.burgerWrapper {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #33333355;
+  backdrop-filter: blur(4px);
+  z-index: 200;
+}
+
+.burgerMenu {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  height: 100vh;
+  width: 250px;
+  padding: 40px 40px;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  background-color: var(--background-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  animation: slideLeft 0.5s;
+
+  .heading {
+    width: 100%;
+  }
+
+  .routes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .routes a {
+    color: var(--color-text);
+    transition: color 0.3s;
+  }
+
+  .routes a:hover {
+    color: var(--color-primary);
+  }
+
+  .routes li.active {
+    border-bottom: 2px solid var(--color-primary);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .logo {
+    width: 200px;
+  }
+  .routes {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    translate: 100%;
+  }
+  100% {
+    translate: 0%;
+  }
 }
