@@ -3,11 +3,12 @@ import styles from "./SectionHeading.module.scss";
 
 interface IProps {
   heading: string;
+  className?: CSSRule | string;
 }
 
-export const SectionHeading: FC<IProps> = ({ heading }) => {
+export const SectionHeading: FC<IProps> = ({ heading, className }) => {
   return (
-    <h1 className={styles.heading} data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1100">
+    <h1 className={styles.heading + " " + className} data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
       {heading}
     </h1>
   );
