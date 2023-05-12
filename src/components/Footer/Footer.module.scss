@@ -29,3 +29,15 @@
 .bottomNav {
   padding: 8px 0px;
 }
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    padding: 40px 60px 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 40px 40px 20px;
+  }
+}
