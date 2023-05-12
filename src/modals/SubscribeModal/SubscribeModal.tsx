@@ -4,7 +4,7 @@ import styles from "./SubscribeModal.module.scss";
 
 export const SubscribeModal = ({ handleClose, data }: { handleClose: () => void; data: any }) => {
   return (
-    <ModalWrapper handleClose={handleClose}>
+    <ModalWrapper handleClose={handleClose} className={styles.container}>
       <h2 className={styles.heading}>Terms of Service and Licensing</h2>
       <p className={styles.description}>
         The Products transacted through the Service are licensed, not sold, to You for use only under the terms of this
