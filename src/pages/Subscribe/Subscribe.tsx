@@ -23,47 +23,27 @@ export const Subscribe: FC = () => {
     <Page>
       <div className={styles.container}>
         <PageHeading heading={"Subscribe"} description="" />
-        <div className={styles.topSection} data-aos="zoom-out" data-aos-delay="600" data-aos-duration="1100">
+        <div className={styles.topSection} data-aos="zoom-out" data-aos-delay="100" data-aos-duration="1100">
           <p className={styles.punchLine}>BECOME A MEMBER</p>
           <p className={styles.description}>You are about to bcome a member of AZUR ZONE FOR ES (E-mini S&P 500 ES)</p>
           <h1 className={styles.heading}>Before Becoming a Member:</h1>
           <ol className={styles.list}>
-            <li
-              data-aos="fade-left"
-              data-aos-delay={1300}
-              data-aos-duration={700}
-              data-aos-anchor-placement="top-bottom"
-            >
+            <li data-aos="fade-left" data-aos-delay={300} data-aos-duration={700} data-aos-anchor-placement="top">
               AZUR TRADING SYSTEM is no Holy Grails or magic tool. World Triangle Traders Inc. who has developed AZUR is
               driven to support independent traders in becoming better.
             </li>
-            <li
-              data-aos="fade-left"
-              data-aos-delay={1500}
-              data-aos-duration={700}
-              data-aos-anchor-placement="top-bottom"
-            >
+            <li data-aos="fade-left" data-aos-delay={500} data-aos-duration={700} data-aos-anchor-placement="top">
               AZUR TRADING SYSTEM only works on a Lifetime, Lease or Free (Sim) Licensed NinjaTrader platform.
             </li>
-            <li
-              data-aos="fade-left"
-              data-aos-delay={1700}
-              data-aos-duration={700}
-              data-aos-anchor-placement="top-bottom"
-            >
+            <li data-aos="fade-left" data-aos-delay={700} data-aos-duration={700} data-aos-anchor-placement="top">
               The Application Provider’s payment processor (“PayPal”) will automatically renew your membership until You
               cancel it, at $24.99.
             </li>
-            <li
-              data-aos="fade-left"
-              data-aos-delay={1900}
-              data-aos-duration={700}
-              data-aos-anchor-placement="top-bottom"
-            >
+            <li data-aos="fade-left" data-aos-delay={900} data-aos-duration={700} data-aos-anchor-placement="top">
               YOU MUST READ the Terms of Service and Licencing
             </li>
           </ol>
-          <SectionHeading heading="Start Your Account" />
+          <SectionHeading className={styles.formHeading} heading="Start Your Account" />
           <form className={styles.form} onSubmit={handleSubmit}>
             <LabeledInput
               label="First Name"
@@ -77,7 +57,7 @@ export const Subscribe: FC = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-            <div style={{ gridColumn: "1 / span 2" }}>
+            <div className={styles.span2}>
               <LabeledInput
                 label="Address"
                 placeholder="Enter your address..."
@@ -139,7 +119,7 @@ export const Subscribe: FC = () => {
               <LabeledRadioButton name="trading_tool" label="ED" value="ED" onChange={() => {}} />
               <LabeledRadioButton name="trading_tool" label="E" value="E" onChange={() => {}} />
             </div>
-            <div style={{ gridColumn: "1 / span 2" }}>
+            <div className={styles.span2}>
               <Button className={styles.button} type="submit">
                 Subscribe
               </Button>

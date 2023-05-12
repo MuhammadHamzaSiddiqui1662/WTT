@@ -17,7 +17,7 @@ export const MeAndMyEdge: FC = () => {
               <div
                 className={styles.description}
                 data-aos="fade-right"
-                data-aos-delay="600"
+                // data-aos-delay="600"
                 data-aos-duration="1000"
                 data-aos-anchor-placement="top-bottom"
               >
@@ -37,7 +37,7 @@ export const MeAndMyEdge: FC = () => {
               <div
                 className={styles.dp}
                 data-aos="flip-right"
-                data-aos-delay="600"
+                // data-aos-delay="600"
                 data-aos-duration="1000"
                 data-aos-anchor-placement="top-bottom"
               >
