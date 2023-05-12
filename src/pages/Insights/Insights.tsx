@@ -1,9 +1,10 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import styles from "./Insights.module.scss";
 import { PageHeading } from "src/components/PageHeading/PageHeading";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
-import DP from "src/assets/images/TherryDP.webp";
 import { Page } from "src/components/Page/Page";
+// @ts-ignore
+import v1 from "src/assets/videos/pixel6.webm";
 
 export const Insights: FC = () => {
   return (
@@ -14,20 +15,18 @@ export const Insights: FC = () => {
           <SectionHeading heading="My Approch" />
           <video
             className={styles.video}
-            src={""}
-            width="800"
-            height="450"
+            src={v1}
             controls
             controlsList="nodownload"
             data-aos="fade-in"
-            data-aos-delay="600"
+            data-aos-delay="100"
             data-aos-duration="1000"
             data-aos-anchor-placement="top"
           ></video>
           <div
             className={styles.description}
             data-aos="fade-up"
-            data-aos-delay="600"
+            data-aos-delay="100"
             data-aos-duration="1000"
             data-aos-anchor-placement="top"
           >
@@ -49,20 +48,18 @@ export const Insights: FC = () => {
           <SectionHeading heading="My trading principles & rules" />
           <video
             className={styles.video}
-            src={""}
-            width="800"
-            height="450"
+            src={v1}
             controls
             controlsList="nodownload"
             data-aos="fade-in"
-            data-aos-delay="600"
+            data-aos-delay="100"
             data-aos-duration="1000"
             data-aos-anchor-placement="top"
           ></video>
           <div
             className={styles.description}
             data-aos="fade-up"
-            data-aos-delay="600"
+            data-aos-delay="100"
             data-aos-duration="1000"
             data-aos-anchor-placement="top"
           >
