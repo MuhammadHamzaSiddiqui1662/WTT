@@ -18,7 +18,7 @@ export const ToolsCard: FC<IProps> = ({
   image,
   alt,
   price,
-  animation = "fade-left",
+  animation = "zoom-out",
   delay,
   duration,
   anchor = "top-bottom",

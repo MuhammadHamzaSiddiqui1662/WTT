@@ -18,7 +18,7 @@ export const NotesCard: FC<IProps> = ({
   image,
   alt,
   description,
-  animation = "fade-left",
+  animation = "zoom-out",
   delay,
   duration,
   anchor = "top",
@@ -38,7 +38,7 @@ export const NotesCard: FC<IProps> = ({
         data-aos="zoom-in"
         data-aos-delay="200"
         data-aos-duration="500"
-        data-aos-anchor-placement="top-bottom"
+        data-aos-anchor-placement="top"
       />
       <div className={styles.caption}>
         <h3 className={styles.title}>{title}</h3>
