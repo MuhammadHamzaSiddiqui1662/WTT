@@ -2,6 +2,7 @@ import { FC } from "react";
 import styles from "./Home.module.scss";
 import { Button } from "src/components/Button/Button";
 import { Page } from "src/components/Page/Page";
+import { Link } from "react-router-dom";
 
 export const Home: FC = () => {
   return (
@@ -28,14 +29,16 @@ export const Home: FC = () => {
             your decision-making process, increase your profit potential, and pave the way to success. Don't just trade,
             stand out with this edge that I am willing to share.
           </p>
-          <Button
-            data-aos="fade-up"
-            data-aos-delay="200"
-            data-aos-duration="1000"
-            // data-aos-anchor-placement="top-bottom"
-          >
-            Get Started
-          </Button>
+          <Link to="/tools">
+            <Button
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+              // data-aos-anchor-placement="top-bottom"
+            >
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
     </Page>
