@@ -1,4 +1,24 @@
 .container {
   width: 90%;
   max-width: 600px;
+  padding: 40px;
+}
+
+.heading {
+  margin: 24px 0px;
+}
+
+.description {
+  text-align: justify;
+}
+
+.list {
+  color: var(--color-grey);
+  padding: 16px 0px 16px 16px;
+  list-style: lower-alpha;
+  text-align: left;
+}
+
+.acceptButton {
+  margin: 20px 0px;
 }

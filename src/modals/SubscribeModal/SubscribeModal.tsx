@@ -1,11 +1,15 @@
 import { PaypalSubscribeButton } from "src/components/PaypalSubscribeButton/PaypalSubscribeButton";
 import { ModalWrapper } from "../ModalWrapper/ModalWrapper";
 import styles from "./SubscribeModal.module.scss";
+import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
+import { LabeledSelectButton } from "src/components/LabeledSelectButton/LabeledSelectButton";
+import { useState } from "react";
 
 export const SubscribeModal = ({ handleClose, data }: { handleClose: () => void; data: any }) => {
+  const [acceptTerms, setAcceptTerms] = useState(false);
   return (
     <ModalWrapper handleClose={handleClose} className={styles.container}>
-      <h2 className={styles.heading}>Terms of Service and Licensing</h2>
+      <SectionHeading className={styles.heading} heading="Terms of Service and Licensing" />
       <p className={styles.description}>
         The Products transacted through the Service are licensed, not sold, to You for use only under the terms of this
         license agreement (“Agreement”), unless a Product is accompanied by a separate license agreement, in which case
@@ -204,7 +208,14 @@ export const SubscribeModal = ({ handleClose, data }: { handleClose: () => void;
           The Terms and Conditions of this Agreement are subject to change without prior notice.
         </li>
       </ol>
-      <PaypalSubscribeButton disabled={true} />
+      <LabeledSelectButton
+        className={styles.acceptButton}
+        label="Click here to indicate that you have read and agree to the terms presented in the Terms and Congitions agreement"
+        name="accept"
+        value={`${acceptTerms}`}
+        onChange={() => setAcceptTerms((prev) => !prev)}
+      />
+      <PaypalSubscribeButton disabled={!acceptTerms} />
     </ModalWrapper>
   );
 };
