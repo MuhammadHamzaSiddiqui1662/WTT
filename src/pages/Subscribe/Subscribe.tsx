@@ -3,20 +3,30 @@ import styles from "./Subscribe.module.scss";
 import { PageHeading } from "src/components/PageHeading/PageHeading";
 import { LabeledInput } from "src/components/LabeledInput/LabeledInput";
 import { Page } from "src/components/Page/Page";
-import { LabeledTextarea } from "src/components/LabeledTextarea/LabeledTextarea";
 import { Button } from "src/components/Button/Button";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
 import { LabeledRadioButton } from "src/components/LabeledRadioButton/LabeledRadioButton";
 import { SubscribeModal } from "src/modals/SubscribeModal/SubscribeModal";
+import gateways from "src/assets/images/payment_gatways-logos.png";
 
 export const Subscribe: FC = () => {
   const [openModal, setOpenModal] = useState(false);
   const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [country, setCountry] = useState("");
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [phone, setPhone] = useState("");
+  const [machinId, setMachinId] = useState("");
+  const [provider, setProvider] = useState("");
+  const [tool, setTool] = useState("");
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(name, email, message);
+    console.log(name, email);
     setOpenModal(true);
   };
   return (
@@ -48,52 +58,52 @@ export const Subscribe: FC = () => {
             <LabeledInput
               label="First Name"
               placeholder="Enter your first name..."
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
             />
             <LabeledInput
               label="Last Name"
               placeholder="Enter your last name..."
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
             />
             <div className={styles.span2}>
               <LabeledInput
                 label="Address"
                 placeholder="Enter your address..."
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
               />
             </div>
             <LabeledInput
               label="City"
-              placeholder="Enter your email..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your City..."
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
             />
             <LabeledInput
               label="State"
-              placeholder="Enter your email..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your State..."
+              value={state}
+              onChange={(e) => setState(e.target.value)}
             />
             <LabeledInput
               label="Postal ZIP Code"
-              placeholder="Enter your email..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your ZIP Code..."
+              value={zipCode}
+              onChange={(e) => setZipCode(e.target.value)}
             />
             <LabeledInput
               label="Country"
-              placeholder="Enter your email..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your Country..."
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
             />
             <LabeledInput
               label="Phone"
-              placeholder="Enter your email..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your Phone..."
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
             />
             <LabeledInput
               label="Email"
@@ -104,20 +114,59 @@ export const Subscribe: FC = () => {
             <LabeledInput
               label="Machine ID"
               placeholder="Ninja Trader Machine ID..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={machinId}
+              onChange={(e) => setMachinId(e.target.value)}
             />
             <LabeledInput
               label="Provider"
               placeholder="Who is your data feed provider"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={provider}
+              onChange={(e) => setProvider(e.target.value)}
             />
-            <div>
-              <p>What instrument do you trade?</p>
-              <LabeledRadioButton name="trading_tool" label="EN" value="EN" onChange={() => {}} />
-              <LabeledRadioButton name="trading_tool" label="ED" value="ED" onChange={() => {}} />
-              <LabeledRadioButton name="trading_tool" label="E" value="E" onChange={() => {}} />
+            <div className={styles.toolsOption}>
+              <p className={styles.description}>What instrument do you trade?</p>
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_tool"
+                label="ES"
+                value="ES"
+                onChange={(e) => setTool(e.target.value)}
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_tool"
+                label="NQ"
+                value="NQ"
+                onChange={(e) => setTool(e.target.value)}
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_tool"
+                label="RTY"
+                value="RTY"
+                onChange={(e) => setTool(e.target.value)}
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_tool"
+                label="CL"
+                value="CL"
+                onChange={(e) => setTool(e.target.value)}
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_tool"
+                label="6E"
+                value="6E"
+                onChange={(e) => setTool(e.target.value)}
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_tool"
+                label="6J"
+                value="6J"
+                onChange={(e) => setTool(e.target.value)}
+              />
             </div>
             <div className={styles.span2}>
               <Button className={styles.button} type="submit">
@@ -125,6 +174,7 @@ export const Subscribe: FC = () => {
               </Button>
             </div>
           </form>
+          <img className={styles.gatways} src={gateways} alt="gatways" />
         </div>
         {openModal && <SubscribeModal handleClose={() => setOpenModal(false)} data={{}} />}
       </div>
