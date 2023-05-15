@@ -1,10 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  PayPalScriptProvider,
-  PayPalButtons,
-  usePayPalScriptReducer,
-  ReactPayPalScriptOptions,
-} from "@paypal/react-paypal-js";
+import { PayPalScriptProvider, ReactPayPalScriptOptions } from "@paypal/react-paypal-js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styles from "./App.module.scss";
 import { Body } from "./Body";

@@ -11,7 +11,6 @@ import gateways from "src/assets/images/payment_gatways-logos.png";
 
 export const Subscribe: FC = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [name, setName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
@@ -26,7 +25,7 @@ export const Subscribe: FC = () => {
   const [tool, setTool] = useState("");
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(name, email);
+    console.log(email, tool);
     setOpenModal(true);
   };
   return (

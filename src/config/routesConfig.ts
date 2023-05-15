@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { Contact } from "src/pages/Contact/Contact";
 import { Home } from "src/pages/Home/Home";
 import { Insights } from "src/pages/Insights/Insights";

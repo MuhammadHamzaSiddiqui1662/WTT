@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import styles from "./MeAndMyEdge.module.scss";
 import { PageHeading } from "src/components/PageHeading/PageHeading";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
