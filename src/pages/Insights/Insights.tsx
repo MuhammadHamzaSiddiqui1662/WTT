@@ -4,7 +4,6 @@ import { PageHeading } from "src/components/PageHeading/PageHeading";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
 import { Page } from "src/components/Page/Page";
 // @ts-ignore
-import v1 from "src/assets/videos/pixel6.webm";
 
 export const Insights: FC = () => {
   return (
@@ -15,7 +14,7 @@ export const Insights: FC = () => {
           <SectionHeading heading="My Approch" />
           <video
             className={styles.video}
-            src={v1}
+            src={""}
             controls
             controlsList="nodownload"
             data-aos="fade-in"
@@ -48,7 +47,7 @@ export const Insights: FC = () => {
           <SectionHeading heading="My trading principles & rules" />
           <video
             className={styles.video}
-            src={v1}
+            src={""}
             controls
             controlsList="nodownload"
             data-aos="fade-in"
