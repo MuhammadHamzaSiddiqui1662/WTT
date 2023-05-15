@@ -12,6 +12,10 @@ export const PageHeading: FC<IProps> = ({ heading, description }) => {
       <h1 className={styles.heading} data-aos="zoom-in" data-aos-duration="1000">
         {heading}
       </h1>
+      <div className={styles.bgWrapper}></div>
+      <div className={styles.blueRectangle}>
+        <div className={styles.blueRectangle2}></div>
+      </div>
     </div>
   );
 };
