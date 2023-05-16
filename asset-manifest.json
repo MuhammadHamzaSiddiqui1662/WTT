@@ -1,9 +1,8 @@
 {
   "files": {
     "main.css": "/WTT/static/css/main.1c922307.css",
-    "main.js": "/WTT/static/js/main.6e2818fc.js",
+    "main.js": "/WTT/static/js/main.afddc01a.js",
     "static/js/787.c1a1d098.chunk.js": "/WTT/static/js/787.c1a1d098.chunk.js",
-    "static/media/pixel6.webm": "/WTT/static/media/pixel6.9e7f867a4dce9def5e47.webm",
     "static/media/trade__bg.png": "/WTT/static/media/trade__bg.c411d3e79e4b06c9af73.png",
     "static/media/payment_gatways-logos.png": "/WTT/static/media/payment_gatways-logos.d6177499a1d585afc4e8.png",
     "static/media/Poppins-ThinItalic.ttf": "/WTT/static/media/Poppins-ThinItalic.24564ea8dcd4b58262f6.ttf",
@@ -29,11 +28,11 @@
     "static/media/TherryDP.webp": "/WTT/static/media/TherryDP.6777c5d5afd525dd6dbd.webp",
     "index.html": "/WTT/index.html",
     "main.1c922307.css.map": "/WTT/static/css/main.1c922307.css.map",
-    "main.6e2818fc.js.map": "/WTT/static/js/main.6e2818fc.js.map",
+    "main.afddc01a.js.map": "/WTT/static/js/main.afddc01a.js.map",
     "787.c1a1d098.chunk.js.map": "/WTT/static/js/787.c1a1d098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1c922307.css",
-    "static/js/main.6e2818fc.js"
+    "static/js/main.afddc01a.js"
   ]
 }
