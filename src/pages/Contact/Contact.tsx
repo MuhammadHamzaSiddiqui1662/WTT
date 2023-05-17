@@ -6,14 +6,28 @@ import { Page } from "src/components/Page/Page";
 import { LabeledTextarea } from "src/components/LabeledTextarea/LabeledTextarea";
 import { Button } from "src/components/Button/Button";
 
+const WTT_EMAIL_ADDRESS = "testing@tester.com";
+const EMAIL_SUBJECT = ``;
+
 export const Contact: FC = () => {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(name, email, message);
+
+    const body = `Name: ${name}\n\n${message}`;
+
+    const mailtoURL = `mailto:${WTT_EMAIL_ADDRESS}?subject=${encodeURIComponent(
+      EMAIL_SUBJECT
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoURL;
+
+    setName("");
+    setMessage("");
   };
+
   return (
     <Page>
       <div className={styles.container}>
@@ -31,12 +45,6 @@ export const Contact: FC = () => {
               placeholder="Enter your name..."
               value={name}
               onChange={(e) => setName(e.target.value)}
-            />
-            <LabeledInput
-              label="Email"
-              placeholder="Enter your email..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
             />
             <LabeledTextarea
               label="Message"
