@@ -1,6 +1,7 @@
 import { FC } from "react";
 import styles from "./ToolsCard.module.scss";
 import { Button } from "../Button/Button";
+import { Link } from "react-router-dom";
 
 interface IProps {
   title: string;
@@ -43,15 +44,17 @@ export const ToolsCard: FC<IProps> = ({
       <div className={styles.caption}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.price}>Price: ${price}</p>
-        <Button
-          fullwidth={true}
-          data-aos="fade-up"
-          data-aos-delay="200"
-          data-aos-duration="500"
-          data-aos-anchor-placement="top"
-        >
-          Add to Basket
-        </Button>
+        <Link to={"/subscribe"}>
+          <Button
+            fullwidth={true}
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-duration="500"
+            data-aos-anchor-placement="top"
+          >
+            Add to Basket
+          </Button>
+        </Link>
       </div>
     </div>
   );
