@@ -29,7 +29,7 @@ export const Home: FC = () => {
             your decision-making process, increase your profit potential, and pave the way to success. Don't just trade,
             stand out with this edge that I am willing to share.
           </p>
-          <Link to="/tools">
+          <Link to="/notes">
             <Button
               data-aos="fade-up"
               data-aos-delay="200"
