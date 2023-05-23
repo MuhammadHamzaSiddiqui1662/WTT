@@ -1,7 +1,6 @@
 import { ModalWrapper } from "../ModalWrapper/ModalWrapper";
 import styles from "./NotesModal.module.scss";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
-import { useState } from "react";
 import { Notes } from "src/types";
 
 export const NotesModal = ({ handleClose, data }: { handleClose: () => void; data: Notes }) => {
