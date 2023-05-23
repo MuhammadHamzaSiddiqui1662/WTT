@@ -5,3 +5,15 @@ export interface Route {
   url: `/${string}`;
   component: any;
 }
+
+export interface Notes {
+  title: string;
+  description: string;
+  image: string;
+}
+
+export interface Tools {
+  title: string;
+  description: string;
+  image: string;
+}

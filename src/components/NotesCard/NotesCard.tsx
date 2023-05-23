@@ -11,6 +11,7 @@ interface IProps {
   delay?: number;
   duration?: number;
   anchor?: string;
+  setOpenedNotes: Function;
 }
 
 export const NotesCard: FC<IProps> = ({
@@ -22,6 +23,7 @@ export const NotesCard: FC<IProps> = ({
   delay,
   duration,
   anchor = "top",
+  setOpenedNotes,
 }) => {
   return (
     <div
@@ -49,6 +51,7 @@ export const NotesCard: FC<IProps> = ({
           data-aos-delay="200"
           data-aos-duration="500"
           data-aos-anchor-placement="top"
+          onClick={() => setOpenedNotes({ title, image, description })}
         >
           Give a Read
         </Button>
