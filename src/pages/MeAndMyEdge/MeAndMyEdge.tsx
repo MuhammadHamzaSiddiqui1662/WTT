@@ -2,7 +2,7 @@ import { FC } from "react";
 import styles from "./MeAndMyEdge.module.scss";
 import { PageHeading } from "src/components/PageHeading/PageHeading";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
-import DP from "src/assets/images/TherryDP.webp";
+import DP from "src/assets/images/owner.jpg";
 import { Page } from "src/components/Page/Page";
 
 export const MeAndMyEdge: FC = () => {
@@ -16,7 +16,6 @@ export const MeAndMyEdge: FC = () => {
             <div
               className={styles.description}
               data-aos="fade-right"
-              // data-aos-delay="600"
               data-aos-duration="1000"
               data-aos-anchor-placement="top-bottom"
             >
@@ -36,7 +35,6 @@ export const MeAndMyEdge: FC = () => {
             <div
               className={styles.dp}
               data-aos="flip-right"
-              // data-aos-delay="600"
               data-aos-duration="1000"
               data-aos-anchor-placement="top-bottom"
             >
@@ -60,7 +58,6 @@ export const MeAndMyEdge: FC = () => {
             <div
               className={styles.description}
               data-aos="fade-right"
-              // data-aos-delay="600"
               data-aos-duration="1000"
               data-aos-anchor-placement="top-bottom"
             >
