@@ -10,6 +10,11 @@ export interface Notes {
   title: string;
   description: string;
   image: string;
+  alt: string;
+}
+export interface NotesConfig {
+  sectionHeading: string;
+  content: Notes[];
 }
 
 export interface Tools {
