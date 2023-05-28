@@ -1,12 +1,9 @@
 import { FC } from "react";
 import styles from "./NotesCard.module.scss";
 import { Button } from "../Button/Button";
+import { Notes } from "src/types";
 
-interface IProps {
-  title: string;
-  image: string;
-  alt: string;
-  description: string;
+interface IProps extends Notes {
   animation?: string;
   delay?: number;
   duration?: number;
