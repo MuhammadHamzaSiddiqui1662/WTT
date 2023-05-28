@@ -28,3 +28,9 @@ export interface ToolsConfig {
   sectionHeading: string;
   content: Tools[];
 }
+
+export interface InsightsConfig {
+  heading: string;
+  src: string;
+  descriptions: string[];
+}
