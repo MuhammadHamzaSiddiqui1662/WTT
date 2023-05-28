@@ -5,6 +5,7 @@ import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
 import { ToolsCard } from "src/components/ToolsCard/ToolsCard";
 import graphImage from "src/assets/images/exampleGraph.webp";
 import { Page } from "src/components/Page/Page";
+import { toolsConfig } from "src/config/toolsConfig";
 
 export const Tools: FC = () => {
   return (
@@ -68,36 +69,23 @@ export const Tools: FC = () => {
             </li>
           </ul>
         </section>
-        <section className={styles.section}>
-          <SectionHeading heading="Tools for futures" />
-          <div className={styles.toolCards}>
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-          </div>
-        </section>
-        <section className={styles.section}>
-          <SectionHeading heading="Tools for indices" />
-          <div className={styles.toolCards}>
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-          </div>
-        </section>
-        <section className={styles.section}>
-          <SectionHeading heading="Tools for forex" />
-          <div className={styles.toolCards}>
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-            <ToolsCard title="NQ KEY LEVELS" price={19.99} image={graphImage} alt="abc graph" />
-          </div>
-        </section>
+        {toolsConfig.map((section, index) => (
+          <section key={index} className={styles.section}>
+            <SectionHeading heading={section.sectionHeading} />
+            <div className={styles.toolCards}>
+              {section.content.map((tool, index) => (
+                <ToolsCard
+                  key={index}
+                  planId={tool.planId}
+                  title={tool.title}
+                  price={tool.price}
+                  image={graphImage}
+                  alt={tool.alt}
+                />
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
     </Page>
   );

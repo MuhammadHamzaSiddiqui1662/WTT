@@ -19,6 +19,12 @@ export interface NotesConfig {
 
 export interface Tools {
   title: string;
-  description: string;
+  price: number;
   image: string;
+  alt: string;
+  planId: string;
+}
+export interface ToolsConfig {
+  sectionHeading: string;
+  content: Tools[];
 }

@@ -2,12 +2,9 @@ import { FC } from "react";
 import styles from "./ToolsCard.module.scss";
 import { Button } from "../Button/Button";
 import { Link } from "react-router-dom";
+import { Tools } from "src/types";
 
-interface IProps {
-  title: string;
-  image: string;
-  alt: string;
-  price: number;
+interface IProps extends Tools {
   animation?: string;
   delay?: number;
   duration?: number;
