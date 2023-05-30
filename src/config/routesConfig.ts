@@ -3,6 +3,7 @@ import { Home } from "src/pages/Home/Home";
 import { Insights } from "src/pages/Insights/Insights";
 import { MeAndMyEdge } from "src/pages/MeAndMyEdge/MeAndMyEdge";
 import { Notes } from "src/pages/Notes/Notes";
+import { SignIn } from "src/pages/SignIn/SignIn";
 import { Subscribe } from "src/pages/Subscribe/Subscribe";
 import { Tools } from "src/pages/Tools/Tools";
 import { Route } from "src/types";
@@ -42,5 +43,10 @@ export const ROUTES: Route[] = [
     name: "Subscribe",
     url: "/subscribe",
     component: Subscribe,
+  },
+  {
+    name: "Sign In",
+    url: "/sign-in",
+    component: SignIn,
   },
 ];
