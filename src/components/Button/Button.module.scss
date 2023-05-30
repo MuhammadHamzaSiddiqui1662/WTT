@@ -1,3 +1,9 @@
+.container {
+  &.fullwidth {
+    width: 100%;
+  }
+}
+
 .button {
   background: transparent;
   color: var(--color-text);

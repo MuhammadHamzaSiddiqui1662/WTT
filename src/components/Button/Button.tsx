@@ -11,7 +11,7 @@ interface IProps {
 
 export const Button: FC<IProps> = ({ children, className, type, fullwidth = false, onClick, ...props }) => {
   return (
-    <div className={styles.container} {...props}>
+    <div className={`${styles.container} ${fullwidth && styles.fullwidth}`} {...props}>
       <button
         className={`${styles.button} ${fullwidth && styles.fullwidth} ${className}`}
         type={type}
