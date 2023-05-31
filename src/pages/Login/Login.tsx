@@ -23,8 +23,19 @@ export const Login: FC = () => {
     <div className={styles.container}>
       <div className={styles.card}>
         <h2 className={styles.heading}>Sign In</h2>
-        <LabeledInput label="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <LabeledInput label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <LabeledInput
+          label="Email"
+          placeholder="Enter your email..."
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <LabeledInput
+          label="Password"
+          type="password"
+          placeholder="Enter yor password..."
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <p className={styles.signUp}>
           Don't have an account? <Link to="/sign-up">Sign Up</Link> now
         </p>
