@@ -12,6 +12,7 @@
   background: linear-gradient(180deg, #333, transparent);
   border: 1px solid var(--color-white);
   padding: 40px 24px;
+  margin: 80px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,7 +24,7 @@
   font-size: 30px;
 }
 
-.signUp {
+.text {
   margin: 4px 0px;
   & > a {
     color: var(--color-primary);
