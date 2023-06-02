@@ -4,7 +4,6 @@ export interface Route {
   name: string;
   url: `/${string}`;
   component: any;
-  visible: boolean;
 }
 
 export interface Notes {

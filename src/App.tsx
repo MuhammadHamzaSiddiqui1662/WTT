@@ -10,7 +10,6 @@ import { getAnalytics } from "firebase/analytics";
 import * as AOS from "aos";
 import "aos/dist/aos.css";
 import { app } from "./firebase";
-import { SignUp } from "./pages/SignUp/SignUp";
 
 function App() {
   useEffect(() => {
@@ -28,7 +27,6 @@ function App() {
               {ROUTES.map((route) => (
                 <Route key={route.url} path={route.url} Component={route.component} />
               ))}
-              <Route path={"sign-up"} Component={SignUp} />
               <Route path="*" element={<h3 style={{ color: "white" }}>Not Found</h3>} />
             </Route>
           </Routes>
