@@ -18,11 +18,14 @@ export const NavBar: FC<IProps> = ({ className }) => {
       <div className={styles.container + " " + className}>
         <img className={styles.logo} src={logo} alt="logo" />
         <ul className={styles.routes}>
-          {ROUTES.map((route) => (
-            <li key={route.url} className={pathname === route.url ? styles.active : ""}>
-              <Link to={route.url}>{route.name}</Link>
-            </li>
-          ))}
+          {ROUTES.map(
+            (route) =>
+              route.visible && (
+                <li key={route.url} className={pathname === route.url ? styles.active : ""}>
+                  <Link to={route.url}>{route.name}</Link>
+                </li>
+              )
+          )}
         </ul>
         <RxHamburgerMenu className={styles.menuIcon} size={24} onClick={() => setMenuOpened(true)} />
       </div>
