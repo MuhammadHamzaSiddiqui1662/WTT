@@ -24,10 +24,14 @@
   font-size: 30px;
 }
 
-.text {
+.signUp {
   margin: 4px 0px;
   & > a {
     color: var(--color-primary);
     text-decoration: underline;
   }
+}
+
+.button {
+  // margin-top: 20px;
 }
