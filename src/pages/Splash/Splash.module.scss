@@ -1,0 +1,52 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: var(--background-primary);
+  background: url(../../assets/images/trade__bg.png) no-repeat 100% 100%, var(--background-primary);
+  background-size: 100% 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 24px;
+  transition: 1s ease-in;
+
+  &.hide {
+    transform: translateY(-100%);
+  }
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+}
+
+.logo {
+  width: 400px;
+}
+
+@media only screen and (max-width: 650px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .leftSide {
+    align-items: center;
+    padding: 40px 0px;
+  }
+
+  .logo {
+    width: 80%;
+  }
+}
