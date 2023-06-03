@@ -2,15 +2,13 @@ import { FC, FormEvent, useEffect, useState } from "react";
 import styles from "./ForgotPassword.module.scss";
 import { LabeledInput } from "src/components/LabeledInput/LabeledInput";
 import { Button } from "src/components/Button/Button";
-import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "src/firebase";
 import { useNavigate } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useFirebase } from "src/hooks/useFirebase";
 
 export const ForgotPassword: FC = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
-  const [user, isLoading] = useAuthState(auth);
+  const { user, isLoading, handleResetPassword } = useFirebase();
 
   useEffect(() => {
     if (user) {
@@ -18,20 +16,16 @@ export const ForgotPassword: FC = () => {
     }
   }, [user, navigate]);
 
-  const handleResetPassword = async (email: string) => {
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
     try {
-      await sendPasswordResetEmail(auth, email);
+      await handleResetPassword(email);
       alert("An email has been sent to your email address, rest your password from there and then login");
       navigate("/login");
     } catch (error) {
-      console.log(error);
       alert("No user exist with this email");
+      console.log(error);
     }
-  };
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    handleResetPassword(email);
   };
 
   return isLoading ? null : (

@@ -2,16 +2,14 @@ import { FC, FormEvent, useEffect, useState } from "react";
 import styles from "./Login.module.scss";
 import { LabeledInput } from "src/components/LabeledInput/LabeledInput";
 import { Button } from "src/components/Button/Button";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "src/firebase";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useFirebase } from "src/hooks/useFirebase";
 
 export const Login: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const [user, isLoading] = useAuthState(auth);
+  const { user, isLoading, handleLogin } = useFirebase();
 
   useEffect(() => {
     if (user) {
@@ -19,18 +17,14 @@ export const Login: FC = () => {
     }
   }, [user, navigate]);
 
-  const handleLogin = async (email: string, password: string) => {
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      await handleLogin(email, password);
       navigate("/");
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    handleLogin(email, password);
   };
 
   return isLoading ? null : (

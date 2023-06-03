@@ -7,16 +7,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styles from "./App.module.scss";
 import { Body } from "./Body";
 import { initialOptions } from "./config/paypalConfig";
-import { getAnalytics } from "firebase/analytics";
-import { app } from "./firebase";
 import { useRoutes } from "./hooks/useRoutes";
+import { useFirebase } from "./hooks/useFirebase";
 
 function App() {
   useEffect(() => {
-    getAnalytics(app);
     AOS.init();
   }, []);
   const { routes } = useRoutes();
+  useFirebase();
 
   return (
     <div className={styles.App}>

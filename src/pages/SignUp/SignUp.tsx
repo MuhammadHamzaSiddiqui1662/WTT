@@ -1,28 +1,31 @@
-import { FC, FormEvent, useState } from "react";
+import { FC, FormEvent, useEffect, useState } from "react";
 import styles from "./SignUp.module.scss";
 import { LabeledInput } from "src/components/LabeledInput/LabeledInput";
 import { Button } from "src/components/Button/Button";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "src/firebase";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useFirebase } from "src/hooks/useFirebase";
 
 export const SignUp: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
+  const { user, handleSignUp } = useFirebase();
 
-  const handleSignUp = async (email: string, password: string) => {
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
     try {
-      const user = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(user);
+      await handleSignUp(email, password);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    handleSignUp(email, password);
   };
 
   return (

@@ -8,13 +8,12 @@ import { Login } from "src/pages/Login/Login";
 import { Subscribe } from "src/pages/Subscribe/Subscribe";
 import { Tools } from "src/pages/Tools/Tools";
 import { Route } from "src/types";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "src/firebase";
 import { ForgotPassword } from "src/pages/ForgotPassword/ForgotPassword";
 import { SignUp } from "src/pages/SignUp/SignUp";
+import { useFirebase } from "./useFirebase";
 
 export const useRoutes = () => {
-  const [user] = useAuthState(auth);
+  const { user } = useFirebase();
   const routes: Route[] = useMemo(
     () => [
       {

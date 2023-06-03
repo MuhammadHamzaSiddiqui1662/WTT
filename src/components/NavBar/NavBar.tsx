@@ -5,9 +5,8 @@ import styles from "./NavBar.module.scss";
 import { RxHamburgerMenu } from "react-icons/rx";
 import OutsideClickHandler from "react-outside-click-handler";
 import { useRoutes } from "src/hooks/useRoutes";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "src/firebase";
 import { Button } from "../Button/Button";
+import { useFirebase } from "src/hooks/useFirebase";
 
 interface IProps {
   className?: CSSRule | string;
@@ -17,7 +16,7 @@ export const NavBar: FC<IProps> = ({ className }) => {
   const { pathname } = useLocation();
   const [menuOpened, setMenuOpened] = useState(false);
   const { routes } = useRoutes();
-  const [user] = useAuthState(auth);
+  const { auth, user } = useFirebase();
   return (
     <div className={styles.wrapper}>
       <div className={styles.container + " " + className}>
