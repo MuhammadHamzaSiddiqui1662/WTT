@@ -4,18 +4,24 @@ import styles from "./SubscribeModal.module.scss";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
 import { LabeledSelectButton } from "src/components/LabeledSelectButton/LabeledSelectButton";
 import { useEffect, useState } from "react";
+import { useFirebase } from "src/hooks/useFirebase";
 
 export const SubscribeModal = ({ handleClose, data }: { handleClose: () => void; data: any }) => {
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [planId, setPlanId] = useState("P-3RX065706M3469222L5IFM4I");
+  const { createSubscriber } = useFirebase();
 
   useEffect(() => {
     setPlanId("P-3RX065706M3469222L5IFM4I");
   }, [data]);
 
-  const handleApprove = async (data: any, action: any) => {
-    console.log("action", action);
-    console.log("data", data);
+  const handleApprove = async (_data: any, _action: any) => {
+    console.log("action", _action);
+    console.log("data", _data);
+    await createSubscriber({
+      ..._data,
+      ...data,
+    });
     handleClose();
     // example data
     // {

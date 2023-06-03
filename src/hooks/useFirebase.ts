@@ -7,7 +7,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { addDoc, collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { firebaseConfig } from "../config/firebaseConfig";
 import { getAnalytics } from "firebase/analytics";
 
@@ -20,6 +20,20 @@ export const useFirebase = () => {
   useEffect(() => {
     getAnalytics(app);
   }, [app]);
+
+  const handleLogin = useCallback(
+    async (email: string, password: string) => {
+      try {
+        const { user } = await signInWithEmailAndPassword(auth, email, password);
+        const q = query(collection(db, "users"), where("uid", "==", user.uid));
+        const { docs } = await getDocs(q);
+        localStorage.setItem("user", JSON.stringify(docs[0].data()));
+      } catch (error: any) {
+        throw new Error(error);
+      }
+    },
+    [auth, db]
+  );
 
   const handleSignUp = useCallback(
     async (email: string, password: string, firstName: string, lastname: string, phone: string) => {
@@ -51,15 +65,17 @@ export const useFirebase = () => {
     [auth]
   );
 
-  const handleLogin = useCallback(
-    async (email: string, password: string) => {
+  const createSubscriber = useCallback(
+    async (data: any) => {
       try {
-        await signInWithEmailAndPassword(auth, email, password);
+        await addDoc(collection(db, "orders"), {
+          ...data,
+        });
       } catch (error: any) {
         throw new Error(error);
       }
     },
-    [auth]
+    [db]
   );
 
   return {
@@ -71,5 +87,6 @@ export const useFirebase = () => {
     handleLogin,
     handleSignUp,
     handleResetPassword,
+    createSubscriber,
   };
 };

@@ -1,4 +1,4 @@
-import { FC, useState, FormEvent } from "react";
+import { FC, useState, FormEvent, useEffect } from "react";
 import styles from "./Subscribe.module.scss";
 import { PageHeading } from "src/components/PageHeading/PageHeading";
 import { LabeledInput } from "src/components/LabeledInput/LabeledInput";
@@ -26,6 +26,17 @@ export const Subscribe: FC = () => {
     instrument: "",
     keyLevel: "",
   });
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user") || "");
+    setData((prevData) => ({
+      ...prevData,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      phone: user.phone,
+    }));
+  }, []);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
