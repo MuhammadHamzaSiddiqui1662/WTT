@@ -10,6 +10,8 @@ import { Tools } from "src/pages/Tools/Tools";
 import { Route } from "src/types";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "src/firebase";
+import { ForgotPassword } from "src/pages/ForgotPassword/ForgotPassword";
+import { SignUp } from "src/pages/SignUp/SignUp";
 
 export const useRoutes = () => {
   const [user] = useAuthState(auth);
@@ -62,6 +64,18 @@ export const useRoutes = () => {
         url: "/login",
         component: Login,
         visible: !user,
+      },
+      {
+        name: "Sign Up",
+        url: "/sign-up",
+        component: SignUp,
+        visible: !user,
+      },
+      {
+        name: "Forgot Password",
+        url: "/forgot-password",
+        component: ForgotPassword,
+        visible: false,
       },
     ],
     [user]
