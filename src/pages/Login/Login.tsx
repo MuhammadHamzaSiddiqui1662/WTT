@@ -30,7 +30,7 @@ export const Login: FC = () => {
   return isLoading ? null : (
     <div className={styles.container}>
       <form className={styles.card} onSubmit={handleSubmit}>
-        <h2 className={styles.heading}>Sign In</h2>
+        <h2 className={styles.heading}>Login</h2>
         <LabeledInput
           label="Email"
           placeholder="Enter your email..."
