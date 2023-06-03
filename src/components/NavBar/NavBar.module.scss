@@ -28,19 +28,23 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-}
 
-.routes a {
-  color: var(--color-text);
-  transition: color 0.3s;
-}
+  a {
+    color: var(--color-text);
+    transition: color 0.3s;
+  }
 
-.routes a:hover {
-  color: var(--color-primary);
-}
+  a:hover {
+    color: var(--color-primary);
+  }
 
-.routes li.active {
-  border-bottom: 2px solid var(--color-primary);
+  li.active {
+    border-bottom: 2px solid var(--color-primary);
+  }
+
+  .logout {
+    padding: 10px 24px;
+  }
 }
 
 .burgerWrapper {
@@ -85,19 +89,19 @@
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-  }
 
-  .routes a {
-    color: var(--color-text);
-    transition: color 0.3s;
-  }
+    a {
+      color: var(--color-text);
+      transition: color 0.3s;
+    }
 
-  .routes a:hover {
-    color: var(--color-primary);
-  }
+    a:hover {
+      color: var(--color-primary);
+    }
 
-  .routes li.active {
-    border-bottom: 2px solid var(--color-primary);
+    li.active {
+      border-bottom: 2px solid var(--color-primary);
+    }
   }
 }
 

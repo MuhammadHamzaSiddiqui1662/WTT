@@ -5,22 +5,23 @@ import { Button } from "src/components/Button/Button";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "src/firebase";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export const Login: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const [user, isLoading] = useAuthState(auth);
+
   useEffect(() => {
-    if (auth.currentUser) {
-      console.log(auth.currentUser);
+    if (user) {
       navigate("/");
     }
-  }, []);
+  }, [user]);
 
   const handleLogin = async (email: string, password: string) => {
     try {
-      const user = await signInWithEmailAndPassword(auth, email, password);
-      console.log(user);
+      await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -32,7 +33,7 @@ export const Login: FC = () => {
     handleLogin(email, password);
   };
 
-  return (
+  return isLoading ? null : (
     <div className={styles.container}>
       <form className={styles.card} onSubmit={handleSubmit}>
         <h2 className={styles.heading}>Sign In</h2>
