@@ -16,6 +16,14 @@ export const SubscribeModal = ({ handleClose, data }: { handleClose: () => void;
   const handleApprove = async (data: any, action: any) => {
     console.log("action", action);
     console.log("data", data);
+    handleClose();
+    // example data
+    // {
+    //   "orderID": "12459352YH266554C",
+    //   "subscriptionID": "I-43VLA9VC8ABD",
+    //   "facilitatorAccessToken": "A21AAJpAgp_sL3J-GRu6LR_I2p99veIlCcrazw1hOqROTnNPm1pLWfKaVNQ-pEJN9U3xNGGiTgHunlQwsV6XpYXtc88g18pCA",
+    //   "paymentSource": "paypal"
+    // }
   };
 
   return (
