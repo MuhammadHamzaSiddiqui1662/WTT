@@ -6,9 +6,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { useFirebase } from "src/hooks/useFirebase";
 
 export const SignUp: FC = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
   const navigate = useNavigate();
   const { user, handleSignUp } = useFirebase();
 
@@ -20,8 +25,9 @@ export const SignUp: FC = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (data.password !== data.confirmPassword) return alert("Password and Confirm Password need to be same");
     try {
-      await handleSignUp(email, password);
+      await handleSignUp(data.email, data.password, data.firstName, data.lastName, data.phone);
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -31,34 +37,61 @@ export const SignUp: FC = () => {
   return (
     <div className={styles.container}>
       <form className={styles.card} onSubmit={handleSubmit}>
-        <h2 className={styles.heading}>Sign Up</h2>
+        <div className={styles.span2}>
+          <h2 className={styles.heading}>Sign Up</h2>
+        </div>
+        <LabeledInput
+          label="First Name"
+          placeholder="Enter first name..."
+          required={true}
+          value={data.firstName}
+          onChange={(e) => setData((prevData) => ({ ...prevData, firstName: e.target.value }))}
+        />
+        <LabeledInput
+          label="Last Name"
+          placeholder="Enter last name..."
+          required={true}
+          value={data.lastName}
+          onChange={(e) => setData((prevData) => ({ ...prevData, lastName: e.target.value }))}
+        />
         <LabeledInput
           label="Email"
-          placeholder="Enter your email..."
+          placeholder="Enter email..."
           required={true}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={data.email}
+          onChange={(e) => setData((prevData) => ({ ...prevData, email: e.target.value }))}
+        />
+        <LabeledInput
+          label="Phone"
+          placeholder="Enter phone..."
+          required={true}
+          value={data.phone}
+          onChange={(e) => setData((prevData) => ({ ...prevData, phone: e.target.value }))}
         />
         <LabeledInput
           label="Password"
-          placeholder="Enter yor password..."
+          placeholder="Enter password..."
           required={true}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={data.password}
+          onChange={(e) => setData((prevData) => ({ ...prevData, password: e.target.value }))}
         />
         <LabeledInput
           label="Confirm Password"
-          placeholder="Re-Enter yor password..."
+          placeholder="Confirm password..."
           required={true}
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
+          value={data.confirmPassword}
+          onChange={(e) => setData((prevData) => ({ ...prevData, confirmPassword: e.target.value }))}
         />
-        <p className={styles.signUp}>
-          Already have an account? <Link to="/login">Login</Link> now
-        </p>
-        <Button className={styles.button} type="submit" fullwidth={true}>
-          Sign Up
-        </Button>
+        <div className={styles.span2}>
+          <p className={styles.signUp}>
+            Already have an account? <Link to="/login">Login</Link> now
+          </p>
+        </div>
+        <div className={styles.span2}>
+          <Button className={styles.button} type="submit" fullwidth={true}>
+            Sign Up
+          </Button>
+        </div>
       </form>
     </div>
   );

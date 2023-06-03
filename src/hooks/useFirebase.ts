@@ -7,7 +7,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { getFirestore } from "firebase/firestore";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { firebaseConfig } from "../config/firebaseConfig";
 import { getAnalytics } from "firebase/analytics";
 
@@ -22,15 +22,22 @@ export const useFirebase = () => {
   }, [app]);
 
   const handleSignUp = useCallback(
-    async (email: string, password: string) => {
+    async (email: string, password: string, firstName: string, lastname: string, phone: string) => {
       try {
-        const user = await createUserWithEmailAndPassword(auth, email, password);
-        console.log(user);
+        const { user } = await createUserWithEmailAndPassword(auth, email, password);
+        await addDoc(collection(db, "users"), {
+          uid: user.uid,
+          authProvider: "local",
+          email,
+          firstName,
+          lastname,
+          phone,
+        });
       } catch (error: any) {
         throw new Error(error);
       }
     },
-    [auth]
+    [auth, db]
   );
 
   const handleResetPassword = useCallback(
