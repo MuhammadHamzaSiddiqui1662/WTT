@@ -1,23 +1,23 @@
 import { PayPalButtons } from "@paypal/react-paypal-js";
+import { FC } from "react";
 
-export const PaypalSubscribeButton = ({ disabled }: { disabled: boolean }) => {
-  const handleApprove = async (data: any, action: any) => {
-    console.log("running handleApprove...");
-    console.log("action", action);
-    console.log("///////////////////////////////////////////////////////");
-    console.log("data", data);
-  };
+interface IProps {
+  disabled: boolean;
+  planId: string;
+  handleApprove: (data: any, action: any) => Promise<void>;
+}
+
+export const PaypalSubscribeButton: FC<IProps> = ({ disabled, planId, handleApprove }) => {
   return (
     <PayPalButtons
       disabled={disabled}
       createSubscription={(data, actions) => {
         return actions.subscription
           .create({
-            plan_id: "P-3RX065706M3469222L5IFM4I",
+            plan_id: planId,
           })
           .then((orderId) => {
             // Your code here after create the order
-            console.log("order Id: ", orderId);
             return orderId;
           });
       }}

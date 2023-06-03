@@ -3,10 +3,21 @@ import { ModalWrapper } from "../ModalWrapper/ModalWrapper";
 import styles from "./SubscribeModal.module.scss";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
 import { LabeledSelectButton } from "src/components/LabeledSelectButton/LabeledSelectButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const SubscribeModal = ({ handleClose, data }: { handleClose: () => void; data: any }) => {
   const [acceptTerms, setAcceptTerms] = useState(false);
+  const [planId, setPlanId] = useState("P-3RX065706M3469222L5IFM4I");
+
+  useEffect(() => {
+    setPlanId("P-3RX065706M3469222L5IFM4I");
+  }, [data]);
+
+  const handleApprove = async (data: any, action: any) => {
+    console.log("action", action);
+    console.log("data", data);
+  };
+
   return (
     <ModalWrapper handleClose={handleClose} className={styles.container}>
       <SectionHeading className={styles.heading} heading="Terms of Service and Licensing" />
@@ -215,7 +226,7 @@ export const SubscribeModal = ({ handleClose, data }: { handleClose: () => void;
         value={`${acceptTerms}`}
         onChange={() => setAcceptTerms((prev) => !prev)}
       />
-      <PaypalSubscribeButton disabled={!acceptTerms} />
+      <PaypalSubscribeButton planId={planId} disabled={!acceptTerms} handleApprove={handleApprove} />
     </ModalWrapper>
   );
 };

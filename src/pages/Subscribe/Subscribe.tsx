@@ -11,23 +11,34 @@ import gateways from "src/assets/images/payment_gatways-logos.png";
 
 export const Subscribe: FC = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [zipCode, setZipCode] = useState("");
-  const [country, setCountry] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [machinId, setMachinId] = useState("");
-  const [provider, setProvider] = useState("");
-  const [tool, setTool] = useState("");
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    address: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    country: "",
+    email: "",
+    phone: "",
+    machinId: "",
+    provider: "",
+    instrument: "",
+    keyLevel: "",
+  });
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(email, tool);
-    setOpenModal(true);
+    console.log(data);
+    if (data.keyLevel === "") {
+      alert("Select the tool you want to subscribe for");
+    } else if (data.instrument === "") {
+      alert("Select the instrument you want to subscribe for");
+    } else {
+      setOpenModal(true);
+    }
   };
+
   return (
     <Page>
       <div className={styles.container}>
@@ -55,116 +66,351 @@ export const Subscribe: FC = () => {
           <SectionHeading className={styles.formHeading} heading="Start Your Account" />
           <form className={styles.form} onSubmit={handleSubmit}>
             <LabeledInput
+              required={true}
               label="First Name"
               placeholder="Enter your first name..."
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              value={data.firstName}
+              onChange={(e) =>
+                setData((prevData) => ({
+                  ...prevData,
+                  firstName: e.target.value,
+                }))
+              }
             />
             <LabeledInput
+              required={true}
               label="Last Name"
               placeholder="Enter your last name..."
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              value={data.lastName}
+              onChange={(e) =>
+                setData((prevData) => ({
+                  ...prevData,
+                  lastName: e.target.value,
+                }))
+              }
             />
             <div className={styles.span2}>
               <LabeledInput
+                required={true}
                 label="Address"
                 placeholder="Enter your address..."
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
+                value={data.address}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    address: e.target.value,
+                  }))
+                }
               />
             </div>
             <LabeledInput
+              required={true}
               label="City"
               placeholder="Enter your City..."
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
+              value={data.city}
+              onChange={(e) =>
+                setData((prevData) => ({
+                  ...prevData,
+                  city: e.target.value,
+                }))
+              }
             />
             <LabeledInput
+              required={true}
               label="State"
               placeholder="Enter your State..."
-              value={state}
-              onChange={(e) => setState(e.target.value)}
+              value={data.state}
+              onChange={(e) =>
+                setData((prevData) => ({
+                  ...prevData,
+                  state: e.target.value,
+                }))
+              }
             />
             <LabeledInput
+              required={true}
               label="Postal ZIP Code"
               placeholder="Enter your ZIP Code..."
-              value={zipCode}
-              onChange={(e) => setZipCode(e.target.value)}
+              value={data.zipCode}
+              onChange={(e) =>
+                setData((prevData) => ({
+                  ...prevData,
+                  zipCode: e.target.value,
+                }))
+              }
             />
             <LabeledInput
+              required={true}
               label="Country"
               placeholder="Enter your Country..."
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
+              value={data.country}
+              onChange={(e) =>
+                setData((prevData) => ({
+                  ...prevData,
+                  country: e.target.value,
+                }))
+              }
             />
             <LabeledInput
+              required={true}
               label="Phone"
               placeholder="Enter your Phone..."
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              value={data.phone}
+              onChange={(e) =>
+                setData((prevData) => ({
+                  ...prevData,
+                  phone: e.target.value,
+                }))
+              }
             />
             <LabeledInput
+              required={true}
               label="Email"
               placeholder="Enter your email..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={data.email}
+              onChange={(e) =>
+                setData((prevData) => ({
+                  ...prevData,
+                  email: e.target.value,
+                }))
+              }
             />
             <LabeledInput
+              required={true}
               label="Machine ID"
               placeholder="Ninja Trader Machine ID..."
-              value={machinId}
-              onChange={(e) => setMachinId(e.target.value)}
+              value={data.machinId}
+              onChange={(e) =>
+                setData((prevData) => ({
+                  ...prevData,
+                  machinId: e.target.value,
+                }))
+              }
             />
             <LabeledInput
+              required={true}
               label="Provider"
               placeholder="Who is your data feed provider"
-              value={provider}
-              onChange={(e) => setProvider(e.target.value)}
+              value={data.provider}
+              onChange={(e) =>
+                setData((prevData) => ({
+                  ...prevData,
+                  provider: e.target.value,
+                }))
+              }
             />
+            <div className={styles.toolsOption}>
+              <p className={styles.description}>Which key levels do you want?</p>
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_keyLevel"
+                label="ES"
+                value="ES"
+                groupValue={data.keyLevel}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    keyLevel: e.target.value,
+                  }))
+                }
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_keyLevel"
+                label="NQ"
+                value="NQ"
+                groupValue={data.keyLevel}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    keyLevel: e.target.value,
+                  }))
+                }
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_keyLevel"
+                label="RTY"
+                value="RTY"
+                groupValue={data.keyLevel}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    keyLevel: e.target.value,
+                  }))
+                }
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_keyLevel"
+                label="CL"
+                value="CL"
+                groupValue={data.keyLevel}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    keyLevel: e.target.value,
+                  }))
+                }
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_keyLevel"
+                label="6E"
+                value="6E"
+                groupValue={data.keyLevel}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    keyLevel: e.target.value,
+                  }))
+                }
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_keyLevel"
+                label="6J"
+                value="6J"
+                groupValue={data.keyLevel}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    keyLevel: e.target.value,
+                  }))
+                }
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_keyLevel"
+                label="FDAX"
+                value="FDAX"
+                groupValue={data.keyLevel}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    keyLevel: e.target.value,
+                  }))
+                }
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_keyLevel"
+                label="GC"
+                value="GC"
+                groupValue={data.keyLevel}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    keyLevel: e.target.value,
+                  }))
+                }
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_keyLevel"
+                label="ZB"
+                value="ZB"
+                groupValue={data.keyLevel}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    keyLevel: e.target.value,
+                  }))
+                }
+              />
+              <LabeledRadioButton
+                className={styles.radioButton}
+                name="trading_keyLevel"
+                label="ZN"
+                value="ZN"
+                groupValue={data.keyLevel}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    keyLevel: e.target.value,
+                  }))
+                }
+              />
+            </div>
             <div className={styles.toolsOption}>
               <p className={styles.description}>What instrument do you trade?</p>
               <LabeledRadioButton
                 className={styles.radioButton}
-                name="trading_tool"
+                name="trading_instrument"
                 label="ES"
                 value="ES"
-                onChange={(e) => setTool(e.target.value)}
+                groupValue={data.instrument}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    instrument: e.target.value,
+                  }))
+                }
               />
               <LabeledRadioButton
                 className={styles.radioButton}
-                name="trading_tool"
+                name="trading_instrument"
                 label="NQ"
                 value="NQ"
-                onChange={(e) => setTool(e.target.value)}
+                groupValue={data.instrument}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    instrument: e.target.value,
+                  }))
+                }
               />
               <LabeledRadioButton
                 className={styles.radioButton}
-                name="trading_tool"
+                name="trading_instrument"
                 label="RTY"
                 value="RTY"
-                onChange={(e) => setTool(e.target.value)}
+                groupValue={data.instrument}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    instrument: e.target.value,
+                  }))
+                }
               />
               <LabeledRadioButton
                 className={styles.radioButton}
-                name="trading_tool"
+                name="trading_instrument"
                 label="CL"
                 value="CL"
-                onChange={(e) => setTool(e.target.value)}
+                groupValue={data.instrument}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    instrument: e.target.value,
+                  }))
+                }
               />
               <LabeledRadioButton
                 className={styles.radioButton}
-                name="trading_tool"
+                name="trading_instrument"
                 label="6E"
                 value="6E"
-                onChange={(e) => setTool(e.target.value)}
+                groupValue={data.instrument}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    instrument: e.target.value,
+                  }))
+                }
               />
               <LabeledRadioButton
                 className={styles.radioButton}
-                name="trading_tool"
+                name="trading_instrument"
                 label="6J"
                 value="6J"
-                onChange={(e) => setTool(e.target.value)}
+                groupValue={data.instrument}
+                onChange={(e) =>
+                  setData((prevData) => ({
+                    ...prevData,
+                    instrument: e.target.value,
+                  }))
+                }
               />
             </div>
             <div className={styles.span2}>
