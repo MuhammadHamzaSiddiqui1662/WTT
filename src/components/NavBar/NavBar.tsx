@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "src/assets/images/logo.png";
 import styles from "./NavBar.module.scss";
-import { ROUTES } from "src/config/routesConfig";
 import { RxHamburgerMenu } from "react-icons/rx";
 import OutsideClickHandler from "react-outside-click-handler";
 import { useRoutes } from "src/hooks/useRoutes";

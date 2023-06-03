@@ -17,7 +17,7 @@ export const Login: FC = () => {
     if (user) {
       navigate("/");
     }
-  }, [user]);
+  }, [user, navigate]);
 
   const handleLogin = async (email: string, password: string) => {
     try {
