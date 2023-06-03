@@ -15,21 +15,12 @@ export const SubscribeModal = ({ handleClose, data }: { handleClose: () => void;
     setPlanId("P-3RX065706M3469222L5IFM4I");
   }, [data]);
 
-  const handleApprove = async (_data: any, _action: any) => {
-    console.log("action", _action);
-    console.log("data", _data);
+  const handleApprove = async (_data: any) => {
     await createSubscriber({
       ..._data,
       ...data,
     });
     handleClose();
-    // example data
-    // {
-    //   "orderID": "12459352YH266554C",
-    //   "subscriptionID": "I-43VLA9VC8ABD",
-    //   "facilitatorAccessToken": "A21AAJpAgp_sL3J-GRu6LR_I2p99veIlCcrazw1hOqROTnNPm1pLWfKaVNQ-pEJN9U3xNGGiTgHunlQwsV6XpYXtc88g18pCA",
-    //   "paymentSource": "paypal"
-    // }
   };
 
   return (

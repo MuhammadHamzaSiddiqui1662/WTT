@@ -40,7 +40,6 @@ export const Subscribe: FC = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(data);
     if (data.keyLevel === "") {
       alert("Select the tool you want to subscribe for");
     } else if (data.instrument === "") {
@@ -432,7 +431,7 @@ export const Subscribe: FC = () => {
           </form>
           <img className={styles.gatways} src={gateways} alt="gatways" />
         </div>
-        {openModal && <SubscribeModal handleClose={() => setOpenModal(false)} data={{}} />}
+        {openModal && <SubscribeModal handleClose={() => setOpenModal(false)} data={data} />}
       </div>
     </Page>
   );
