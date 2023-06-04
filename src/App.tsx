@@ -9,6 +9,7 @@ import { Body } from "./Body";
 import { initialOptions } from "./config/paypalConfig";
 import { useRoutes } from "./hooks/useRoutes";
 import { useFirebase } from "./hooks/useFirebase";
+import { Loader } from "./components/Loader/Loader";
 
 function App() {
   useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className={styles.App}>
+      <Loader />
       <PayPalScriptProvider options={initialOptions as ReactPayPalScriptOptions}>
         <BrowserRouter>
           <Routes>
