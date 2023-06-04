@@ -1,4 +1,4 @@
-import { FC, FormEvent, useEffect, useState } from "react";
+import { FC, FormEvent, useState } from "react";
 import styles from "./Login.module.scss";
 import { LabeledInput } from "src/components/LabeledInput/LabeledInput";
 import { Button } from "src/components/Button/Button";
@@ -9,13 +9,7 @@ export const Login: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const { user, isLoading, handleLogin } = useFirebase();
-
-  useEffect(() => {
-    if (user) {
-      navigate("/");
-    }
-  }, [user, navigate]);
+  const { isLoading, handleLogin } = useFirebase();
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();

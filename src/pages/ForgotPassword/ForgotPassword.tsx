@@ -1,4 +1,4 @@
-import { FC, FormEvent, useEffect, useState } from "react";
+import { FC, FormEvent, useState } from "react";
 import styles from "./ForgotPassword.module.scss";
 import { LabeledInput } from "src/components/LabeledInput/LabeledInput";
 import { Button } from "src/components/Button/Button";
@@ -8,13 +8,7 @@ import { useFirebase } from "src/hooks/useFirebase";
 export const ForgotPassword: FC = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
-  const { user, isLoading, handleResetPassword } = useFirebase();
-
-  useEffect(() => {
-    if (user) {
-      navigate("/");
-    }
-  }, [user, navigate]);
+  const { isLoading, handleResetPassword } = useFirebase();
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
