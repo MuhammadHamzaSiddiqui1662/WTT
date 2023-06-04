@@ -23,9 +23,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Body />}>
-              {routes.map((route) => (
-                <Route key={route.url} path={route.url} Component={route.component} />
-              ))}
+              {routes.map(
+                (route) => route.visible && <Route key={route.url} path={route.url} Component={route.component} />
+              )}
               <Route path="*" element={<h3 style={{ color: "white" }}>Not Found</h3>} />
             </Route>
           </Routes>
