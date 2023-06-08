@@ -15,7 +15,13 @@ export const SplashPage: FC<IProps> = () => {
           Looking to be part of my World Triangle community of traders. I’m here to share my knowledge, insights,
           experience to enhance traders skills. Also to lend my edge to help traders progress towards success.{" "}
         </p>
-        <Button className={styles.button} onClick={() => setHide(true)}>
+        <Button
+          className={styles.button}
+          onClick={() => {
+            window.scrollTo(0, 0);
+            setHide(true);
+          }}
+        >
           Join the community now!
         </Button>
       </div>
