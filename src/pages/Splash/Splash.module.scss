@@ -8,8 +8,8 @@
   height: 100vh;
   z-index: 1000;
   background-color: var(--background-primary);
-  background: url(../../assets/images/trade__bg.png) no-repeat 100% 100%, var(--background-primary);
-  background-size: 100% 80%;
+  background: url(../../assets/images/bg.png) no-repeat 50% 50%, var(--background-primary);
+  background-size: cover;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 24px;

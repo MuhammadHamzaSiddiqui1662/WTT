@@ -1,5 +1,5 @@
 .container {
-  background: url(../../assets/images/trade__bg.png) no-repeat 100% 0;
+  background: url(../../assets/images/bg.png) no-repeat 50% 50%;
   background-size: cover;
   min-height: 580px;
   display: grid;
@@ -42,7 +42,6 @@
     grid-template-columns: 1fr;
     text-align: center;
     min-height: 480px;
-    background: none;
   }
   .rightSide {
     padding: 8px 10px;
