@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "src/assets/images/logo.png";
 import styles from "./NavBar.module.scss";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -13,8 +13,9 @@ interface IProps {
 }
 
 export const NavBar: FC<IProps> = ({ className }) => {
-  const { pathname } = useLocation();
   const [menuOpened, setMenuOpened] = useState(false);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
   const { routes } = useRoutes();
   const { auth, user } = useFirebase();
   return (
@@ -32,7 +33,13 @@ export const NavBar: FC<IProps> = ({ className }) => {
           )}
           {user && (
             <li>
-              <Button className={styles.logout} onClick={() => auth.signOut()}>
+              <Button
+                className={styles.logout}
+                onClick={() => {
+                  auth.signOut();
+                  navigate("/login");
+                }}
+              >
                 Logout
               </Button>
             </li>
