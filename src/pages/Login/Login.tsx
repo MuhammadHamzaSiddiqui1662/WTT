@@ -8,16 +8,38 @@ import { useFirebase } from "src/hooks/useFirebase";
 export const Login: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState({
+    email: "",
+    password: "",
+  });
   const navigate = useNavigate();
-  const { isLoading, handleLogin } = useFirebase();
+  const { isLoading, handleLogin, getErrorMsg } = useFirebase();
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (!email) {
+      return setError((prev) => ({
+        ...prev,
+        email: "Provide an email",
+      }));
+    }
     try {
       await handleLogin(email, password);
-      navigate("/");
-    } catch (error) {
-      console.log(error);
+      navigate("/me-and-my-edge");
+    } catch (error: any) {
+      let msg = getErrorMsg(error);
+      console.log(msg);
+      if (msg.includes("password")) {
+        setError((prev) => ({
+          ...prev,
+          password: msg,
+        }));
+      } else {
+        setError((prev) => ({
+          ...prev,
+          email: msg,
+        }));
+      }
     }
   };
 
@@ -30,7 +52,14 @@ export const Login: FC = () => {
           placeholder="Enter your email..."
           required={true}
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setError((prev) => ({
+              ...prev,
+              email: "",
+            }));
+          }}
+          error={error.email}
         />
         <LabeledInput
           label="Password"
@@ -38,7 +67,14 @@ export const Login: FC = () => {
           placeholder="Enter yor password..."
           required={true}
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setError((prev) => ({
+              ...prev,
+              password: "",
+            }));
+          }}
+          error={error.password}
         />
         <p className={styles.text}>
           Forgot Password? <Link to="/forgot-password">Reset</Link> now

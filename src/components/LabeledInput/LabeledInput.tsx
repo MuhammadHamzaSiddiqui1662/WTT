@@ -20,7 +20,7 @@ export const LabeledInput: FC<IProps> = ({ label, name, error, ...props }) => {
         {label}:
       </label>
       <input className={styles.input} type="text" id={name || label} name={name || label} {...props} />
-      {!error && <p className={styles.error}>{error}</p>}
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   );
 };

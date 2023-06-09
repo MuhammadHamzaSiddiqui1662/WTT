@@ -78,6 +78,13 @@ export const useFirebase = () => {
     [db]
   );
 
+  const getErrorMsg = useCallback((error: string) => {
+    let startIndex = `${error}`.indexOf("(auth/") + 6;
+    let endIndex = `${error}`.indexOf(").");
+    let msg = `${error}`.substring(startIndex, endIndex);
+    return msg;
+  }, []);
+
   return {
     app,
     auth,
@@ -88,5 +95,6 @@ export const useFirebase = () => {
     handleSignUp,
     handleResetPassword,
     createSubscriber,
+    getErrorMsg,
   };
 };
