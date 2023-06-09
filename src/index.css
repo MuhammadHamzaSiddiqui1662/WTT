@@ -15,6 +15,7 @@
   --color-black: #000000;
   --color-disabled: #1d4864;
   --color-warning: #ffcc00;
+  --color-error: #ff0000;
   /* #2f6d95 */
   --color-text: var(--color-white);
 
@@ -213,4 +214,3 @@ a {
   font-weight: 900;
   src: url("./assets/fonts/Poppins/Poppins-BlackItalic.ttf") format("truetype");
 }
-
