@@ -10,15 +10,17 @@ interface IProps {
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   default?: string;
+  error?: string;
 }
 
-export const LabeledInput: FC<IProps> = ({ label, name, ...props }) => {
+export const LabeledInput: FC<IProps> = ({ label, name, error, ...props }) => {
   return (
     <div className={styles.container}>
       <label className={styles.label} htmlFor={name || label}>
         {label}:
       </label>
       <input className={styles.input} type="text" id={name || label} name={name || label} {...props} />
+      {!error && <p className={styles.error}>{error}</p>}
     </div>
   );
 };
