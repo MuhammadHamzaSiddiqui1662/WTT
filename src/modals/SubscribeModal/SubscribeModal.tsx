@@ -8,11 +8,11 @@ import { useFirebase } from "src/hooks/useFirebase";
 
 export const SubscribeModal = ({ handleClose, data }: { handleClose: () => void; data: any }) => {
   const [acceptTerms, setAcceptTerms] = useState(false);
-  const [planId, setPlanId] = useState("P-3RX065706M3469222L5IFM4I");
+  const [planId, setPlanId] = useState("P-0FF265046G4913356MSA6IUA");
   const { createSubscriber } = useFirebase();
 
   useEffect(() => {
-    setPlanId("P-3RX065706M3469222L5IFM4I");
+    setPlanId("P-0FF265046G4913356MSA6IUA");
   }, [data]);
 
   const handleApprove = async (_data: any) => {
