@@ -12,6 +12,7 @@ import { InitialLoader } from "./components/InitialLoader/InitialLoader";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { Loader } from "./components/Loader/Loader";
 import { useAppSelector } from "./store";
+import { NotSignedInWrapper } from "./components/NotSignedInWrapper/NotSignedInWrapper";
 
 function App() {
   useEffect(() => {
@@ -28,8 +29,16 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Body />}>
-              {routes.map(
-                (route) => route.visible && <Route key={route.url} path={route.url} Component={route.component} />
+              {routes.map((route) =>
+                route.visible ? (
+                  <Route key={route.url} path={route.url} Component={route.component} />
+                ) : (
+                  <Route
+                    key={route.url}
+                    path={route.url}
+                    element={<NotSignedInWrapper>{route.component}</NotSignedInWrapper>}
+                  />
+                )
               )}
               <Route path="*" element={<NotFound />} />
             </Route>

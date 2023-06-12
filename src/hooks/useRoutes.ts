@@ -18,8 +18,8 @@ export const useRoutes = () => {
   const { user } = useFirebase();
   const dispatch = useAppDispatch();
   useEffect(() => {
-    if (window.location.pathname != "/") dispatch(setSplashHide(true));
-  }, []);
+    if (window.location.pathname !== "/") dispatch(setSplashHide(true));
+  }, [dispatch]);
   const routes: Route[] = useMemo(
     () => [
       {

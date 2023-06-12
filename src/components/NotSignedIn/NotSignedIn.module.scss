@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 500px;
+  color: var(--color-primary);
+  padding: 40px;
+  text-align: center;
+}
+.description {
+  color: var(--color-grey);
+  margin: 24px 0px;
+}
