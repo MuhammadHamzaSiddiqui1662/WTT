@@ -3,8 +3,10 @@ import styles from "./Home.module.scss";
 import { Button } from "src/components/Button/Button";
 import { Page } from "src/components/Page/Page";
 import { Link } from "react-router-dom";
+import { useFirebase } from "src/hooks/useFirebase";
 
 export const Home: FC = () => {
+  const { user } = useFirebase();
   return (
     <Page>
       <div className={styles.container}>
@@ -18,7 +20,7 @@ export const Home: FC = () => {
             your decision-making process, increase your profit potential, and pave the way to success. Don't just trade,
             stand out with this edge that I am willing to share.
           </p>
-          <Link to="/contact-us">
+          <Link to={user ? "me-and-my-edge" : "/login"}>
             <Button data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
               Get Started
             </Button>
