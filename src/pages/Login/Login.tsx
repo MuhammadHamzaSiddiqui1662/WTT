@@ -6,29 +6,31 @@ import { Link, useNavigate } from "react-router-dom";
 import { useFirebase } from "src/hooks/useFirebase";
 
 export const Login: FC = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
   const [error, setError] = useState({
     email: "",
     password: "",
   });
   const navigate = useNavigate();
-  const { isLoading, handleLogin, getErrorMsg } = useFirebase();
+  const { handleLogin, getErrorMsg } = useFirebase();
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!email) {
+    if (!data.email) {
       return setError((prev) => ({
         ...prev,
         email: "Provide an email",
       }));
     }
     try {
-      await handleLogin(email, password);
+      await handleLogin(data.email, data.password);
       navigate("/me-and-my-edge");
     } catch (error: any) {
+      console.log(error);
       let msg = getErrorMsg(error);
-      console.log(msg);
       if (msg.includes("password")) {
         setError((prev) => ({
           ...prev,
@@ -43,7 +45,7 @@ export const Login: FC = () => {
     }
   };
 
-  return isLoading ? null : (
+  return (
     <div className={styles.container}>
       <form className={styles.card} onSubmit={handleSubmit}>
         <h2 className={styles.heading}>Login</h2>
@@ -51,9 +53,12 @@ export const Login: FC = () => {
           label="Email"
           placeholder="Enter your email..."
           required={true}
-          value={email}
+          value={data.email}
           onChange={(e) => {
-            setEmail(e.target.value);
+            setData((prev) => ({
+              ...prev,
+              email: e.target.value,
+            }));
             setError((prev) => ({
               ...prev,
               email: "",
@@ -66,9 +71,12 @@ export const Login: FC = () => {
           type="password"
           placeholder="Enter yor password..."
           required={true}
-          value={password}
+          value={data.password}
           onChange={(e) => {
-            setPassword(e.target.value);
+            setData((prev) => ({
+              ...prev,
+              password: e.target.value,
+            }));
             setError((prev) => ({
               ...prev,
               password: "",
