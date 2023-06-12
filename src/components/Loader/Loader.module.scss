@@ -9,13 +9,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--background-primary);
+  background: #00000055;
+  backdrop-filter: blur(2px);
   z-index: 2000;
-  transition: 1s ease-in;
-
-  &.hide {
-    transform: translateY(-100%);
-  }
 }
 
 .spinner {
