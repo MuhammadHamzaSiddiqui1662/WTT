@@ -32,7 +32,7 @@ export const useRoutes = () => {
         name: "Me and My edge",
         url: "/me-and-my-edge",
         component: MeAndMyEdge,
-        visible: user !== null,
+        visible: true,
       },
       {
         name: "Insights",
@@ -62,7 +62,7 @@ export const useRoutes = () => {
         name: "Subscribe",
         url: "/subscribe",
         component: Subscribe,
-        visible: user !== null,
+        visible: false,
       },
       {
         name: "Log In",

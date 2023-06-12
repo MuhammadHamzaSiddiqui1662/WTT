@@ -69,7 +69,7 @@ export const Login: FC = () => {
         <LabeledInput
           label="Password"
           type="password"
-          placeholder="Enter yor password..."
+          placeholder="Enter your password..."
           required={true}
           value={data.password}
           onChange={(e) => {
