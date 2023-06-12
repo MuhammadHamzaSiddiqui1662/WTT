@@ -13,6 +13,8 @@ import { NotFound } from "./pages/NotFound/NotFound";
 import { Loader } from "./components/Loader/Loader";
 import { useAppSelector } from "./store";
 import { NotSignedInWrapper } from "./components/NotSignedInWrapper/NotSignedInWrapper";
+import { useFirebase } from "./hooks/useFirebase";
+import { NotSignedIn } from "./components/NotSignedIn/NotSignedIn";
 
 function App() {
   useEffect(() => {
@@ -20,6 +22,7 @@ function App() {
   }, []);
   const { routes } = useRoutes();
   const { loading } = useAppSelector((state) => state.status);
+  const { user } = useFirebase();
 
   return (
     <div className={styles.App}>
@@ -29,17 +32,13 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Body />}>
-              {routes.map((route) =>
-                route.visible ? (
-                  <Route key={route.url} path={route.url} Component={route.component} />
-                ) : (
-                  <Route
-                    key={route.url}
-                    path={route.url}
-                    element={<NotSignedInWrapper>{route.component}</NotSignedInWrapper>}
-                  />
-                )
-              )}
+              {routes.map((route) => (
+                <Route
+                  key={route.url}
+                  path={route.url}
+                  Component={route.visible || user ? route.component : NotSignedIn}
+                />
+              ))}
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
