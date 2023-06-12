@@ -37,6 +37,7 @@ export const NavBar: FC<IProps> = ({ className }) => {
                 className={styles.logout}
                 onClick={() => {
                   auth.signOut();
+                  setMenuOpened(false);
                   navigate("/login");
                 }}
               >
@@ -65,7 +66,14 @@ export const NavBar: FC<IProps> = ({ className }) => {
                 )}
                 {user && (
                   <li style={{ width: "100%" }}>
-                    <Button fullwidth={true} onClick={() => auth.signOut()}>
+                    <Button
+                      fullwidth={true}
+                      onClick={() => {
+                        auth.signOut();
+                        setMenuOpened(false);
+                        navigate("/login");
+                      }}
+                    >
                       Logout
                     </Button>
                   </li>
