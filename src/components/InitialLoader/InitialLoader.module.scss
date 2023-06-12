@@ -1,0 +1,34 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-primary);
+  z-index: 2000;
+  transition: 1s ease-in;
+
+  &.hide {
+    transform: translateY(-100%);
+  }
+}
+
+.spinner {
+  margin: 0px auto;
+  color: var(--color-primary);
+  animation: spinning 1.3s linear infinite;
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
