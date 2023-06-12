@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 // @ts-ignore
 import * as AOS from "aos";
 import "aos/dist/aos.css";
@@ -8,20 +8,22 @@ import styles from "./App.module.scss";
 import { Body } from "./Body";
 import { initialOptions } from "./config/paypalConfig";
 import { useRoutes } from "./hooks/useRoutes";
-import { useFirebase } from "./hooks/useFirebase";
-import { Loader } from "./components/Loader/Loader";
+import { InitialLoader } from "./components/InitialLoader/InitialLoader";
 import { NotFound } from "./pages/NotFound/NotFound";
+import { Loader } from "./components/Loader/Loader";
+import { useAppSelector } from "./store";
 
 function App() {
   useEffect(() => {
     AOS.init();
   }, []);
   const { routes } = useRoutes();
-  useFirebase();
+  const { loading } = useAppSelector((state) => state.status);
 
   return (
     <div className={styles.App}>
-      <Loader />
+      {loading && <Loader />}
+      <InitialLoader />
       <PayPalScriptProvider options={initialOptions as ReactPayPalScriptOptions}>
         <BrowserRouter>
           <Routes>
