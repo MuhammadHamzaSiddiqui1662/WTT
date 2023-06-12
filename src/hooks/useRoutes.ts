@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { Contact } from "src/pages/Contact/Contact";
 import { Home } from "src/pages/Home/Home";
 import { Insights } from "src/pages/Insights/Insights";
@@ -11,9 +11,15 @@ import { Route } from "src/types";
 import { ForgotPassword } from "src/pages/ForgotPassword/ForgotPassword";
 import { SignUp } from "src/pages/SignUp/SignUp";
 import { useFirebase } from "./useFirebase";
+import { useAppDispatch } from "src/store";
+import { setSplashHide } from "src/state/Status/StatusSlice";
 
 export const useRoutes = () => {
   const { user } = useFirebase();
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    if (window.location.pathname != "/") dispatch(setSplashHide(true));
+  }, []);
   const routes: Route[] = useMemo(
     () => [
       {

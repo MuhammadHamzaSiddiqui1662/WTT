@@ -2,13 +2,16 @@ import { FC, useState } from "react";
 import styles from "./Splash.module.scss";
 import { Button } from "src/components/Button/Button";
 import logo from "src/assets/images/logo.png";
+import { useAppDispatch, useAppSelector } from "src/store";
+import { setSplashHide } from "src/state/Status/StatusSlice";
 
 interface IProps {}
 
 export const SplashPage: FC<IProps> = () => {
-  const [hide, setHide] = useState(false);
+  const { splashHide } = useAppSelector((state) => state.status);
+  const dispatch = useAppDispatch();
   return (
-    <div className={`${styles.container} ${hide && styles.hide}`}>
+    <div className={`${styles.container} ${splashHide && styles.hide}`}>
       <div className={styles.leftSide}>
         <img className={styles.logo} src={logo} alt="" />
         <p className={styles.text}>
@@ -19,7 +22,7 @@ export const SplashPage: FC<IProps> = () => {
           className={styles.button}
           onClick={() => {
             window.scrollTo(0, 0);
-            setHide(true);
+            dispatch(setSplashHide(true));
           }}
         >
           Join the community now!

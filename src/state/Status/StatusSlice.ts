@@ -5,11 +5,13 @@ import type { RootState } from "src/store";
 // Define a type for the slice state
 interface StatusState {
   loading: boolean;
+  splashHide: boolean;
 }
 
 // Define the initial state using that type
 const initialState: StatusState = {
   loading: false,
+  splashHide: false,
 };
 
 export const statusSlice = createSlice({
@@ -20,19 +22,16 @@ export const statusSlice = createSlice({
     setLoading: (state: StatusState, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },
-    // decrement: (state) => {
-    //   state.loading = false;
-    // },
-    // // Use the PayloadAction type to declare the contents of `action.payload`
-    // incrementByAmount: (state, action: PayloadAction<number>) => {
-    //   state.loading += action.payload;
-    // },
+    setSplashHide: (state: StatusState, action: PayloadAction<boolean>) => {
+      state.splashHide = action.payload;
+    },
   },
 });
 
-export const { setLoading } = statusSlice.actions;
+export const { setLoading, setSplashHide } = statusSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-// export const selectCount = (state: RootState) => state.status.value;
+export const selectCount = (state: RootState) => state.status.loading;
+export const selectSplashHide = (state: RootState) => state.status.splashHide;
 
 export default statusSlice.reducer;
