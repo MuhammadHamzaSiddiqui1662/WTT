@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import {
@@ -30,7 +30,7 @@ export const useFirebase = () => {
 
   useEffect(() => {
     dispatch(setLoading(authLoading || signInLoading || signUpLoading || forgotPasswordLoading));
-  }, [authLoading, signInLoading, signUpLoading, forgotPasswordLoading]);
+  }, [authLoading, signInLoading, signUpLoading, forgotPasswordLoading, dispatch]);
 
   const handleLogin = useCallback(
     async (email: string, password: string) => {
@@ -46,7 +46,7 @@ export const useFirebase = () => {
         dispatch(setLoading(false));
       }
     },
-    [auth, db]
+    [db, signInWithEmailAndPassword, dispatch]
   );
 
   const handleSignUp = useCallback(
@@ -68,7 +68,7 @@ export const useFirebase = () => {
         dispatch(setLoading(false));
       }
     },
-    [auth, db]
+    [db, createUserWithEmailAndPassword, dispatch]
   );
 
   const handleResetPassword = useCallback(
@@ -82,7 +82,7 @@ export const useFirebase = () => {
         dispatch(setLoading(false));
       }
     },
-    [auth]
+    [sendPasswordResetEmail, dispatch]
   );
 
   const createSubscriber = useCallback(
@@ -98,7 +98,7 @@ export const useFirebase = () => {
         dispatch(setLoading(false));
       }
     },
-    [db]
+    [db, dispatch]
   );
 
   const getErrorMsg = useCallback((error: string) => {

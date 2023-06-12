@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import styles from "./Splash.module.scss";
 import { Button } from "src/components/Button/Button";
 import logo from "src/assets/images/logo.png";
