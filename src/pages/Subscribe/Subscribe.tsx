@@ -23,8 +23,7 @@ export const Subscribe: FC = () => {
     phone: "",
     machinId: "",
     provider: "",
-    instrument: "",
-    keyLevel: "",
+    platform: "",
   });
 
   useEffect(() => {
@@ -40,10 +39,8 @@ export const Subscribe: FC = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (data.keyLevel === "") {
-      alert("Select the tool you want to subscribe for");
-    } else if (data.instrument === "") {
-      alert("Select the instrument you want to subscribe for");
+    if (data.platform === "") {
+      alert("Select the platform you want to trade on");
     } else {
       setOpenModal(true);
     }
@@ -186,7 +183,6 @@ export const Subscribe: FC = () => {
               }
             />
             <LabeledInput
-              required={true}
               label="Machine ID"
               placeholder="Ninja Trader Machine ID..."
               value={data.machinId}
@@ -198,7 +194,6 @@ export const Subscribe: FC = () => {
               }
             />
             <LabeledInput
-              required={true}
               label="Provider"
               placeholder="Who is your data feed provider"
               value={data.provider}
@@ -210,215 +205,56 @@ export const Subscribe: FC = () => {
               }
             />
             <div className={styles.toolsOption}>
-              <p className={styles.description}>Which key levels do you want?</p>
+              <p className={styles.description}>Choose a trading platform:</p>
               <LabeledRadioButton
                 className={styles.radioButton}
-                name="trading_keyLevel"
-                label="ES"
-                value="ES"
-                groupValue={data.keyLevel}
+                name="trading_platform"
+                label="TradingView"
+                value="TradingView"
+                groupValue={data.platform}
                 onChange={(e) =>
                   setData((prevData) => ({
                     ...prevData,
-                    keyLevel: e.target.value,
+                    platform: e.target.value,
                   }))
                 }
               />
               <LabeledRadioButton
                 className={styles.radioButton}
-                name="trading_keyLevel"
-                label="NQ"
-                value="NQ"
-                groupValue={data.keyLevel}
+                name="trading_platform"
+                label="ThinkOrSwim"
+                value="ThinkOrSwim"
+                groupValue={data.platform}
                 onChange={(e) =>
                   setData((prevData) => ({
                     ...prevData,
-                    keyLevel: e.target.value,
+                    platform: e.target.value,
                   }))
                 }
               />
               <LabeledRadioButton
                 className={styles.radioButton}
-                name="trading_keyLevel"
-                label="RTY"
-                value="RTY"
-                groupValue={data.keyLevel}
+                name="trading_platform"
+                label="NinjaTrader"
+                value="NinjaTrader"
+                groupValue={data.platform}
                 onChange={(e) =>
                   setData((prevData) => ({
                     ...prevData,
-                    keyLevel: e.target.value,
+                    platform: e.target.value,
                   }))
                 }
               />
               <LabeledRadioButton
                 className={styles.radioButton}
-                name="trading_keyLevel"
-                label="CL"
-                value="CL"
-                groupValue={data.keyLevel}
+                name="trading_platform"
+                label="Sierrachart"
+                value="Sierrachart"
+                groupValue={data.platform}
                 onChange={(e) =>
                   setData((prevData) => ({
                     ...prevData,
-                    keyLevel: e.target.value,
-                  }))
-                }
-              />
-              <LabeledRadioButton
-                className={styles.radioButton}
-                name="trading_keyLevel"
-                label="6E"
-                value="6E"
-                groupValue={data.keyLevel}
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    keyLevel: e.target.value,
-                  }))
-                }
-              />
-              <LabeledRadioButton
-                className={styles.radioButton}
-                name="trading_keyLevel"
-                label="6J"
-                value="6J"
-                groupValue={data.keyLevel}
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    keyLevel: e.target.value,
-                  }))
-                }
-              />
-              <LabeledRadioButton
-                className={styles.radioButton}
-                name="trading_keyLevel"
-                label="FDAX"
-                value="FDAX"
-                groupValue={data.keyLevel}
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    keyLevel: e.target.value,
-                  }))
-                }
-              />
-              <LabeledRadioButton
-                className={styles.radioButton}
-                name="trading_keyLevel"
-                label="GC"
-                value="GC"
-                groupValue={data.keyLevel}
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    keyLevel: e.target.value,
-                  }))
-                }
-              />
-              <LabeledRadioButton
-                className={styles.radioButton}
-                name="trading_keyLevel"
-                label="ZB"
-                value="ZB"
-                groupValue={data.keyLevel}
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    keyLevel: e.target.value,
-                  }))
-                }
-              />
-              <LabeledRadioButton
-                className={styles.radioButton}
-                name="trading_keyLevel"
-                label="ZN"
-                value="ZN"
-                groupValue={data.keyLevel}
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    keyLevel: e.target.value,
-                  }))
-                }
-              />
-            </div>
-            <div className={styles.toolsOption}>
-              <p className={styles.description}>What instrument do you trade?</p>
-              <LabeledRadioButton
-                className={styles.radioButton}
-                name="trading_instrument"
-                label="ES"
-                value="ES"
-                groupValue={data.instrument}
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    instrument: e.target.value,
-                  }))
-                }
-              />
-              <LabeledRadioButton
-                className={styles.radioButton}
-                name="trading_instrument"
-                label="NQ"
-                value="NQ"
-                groupValue={data.instrument}
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    instrument: e.target.value,
-                  }))
-                }
-              />
-              <LabeledRadioButton
-                className={styles.radioButton}
-                name="trading_instrument"
-                label="RTY"
-                value="RTY"
-                groupValue={data.instrument}
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    instrument: e.target.value,
-                  }))
-                }
-              />
-              <LabeledRadioButton
-                className={styles.radioButton}
-                name="trading_instrument"
-                label="CL"
-                value="CL"
-                groupValue={data.instrument}
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    instrument: e.target.value,
-                  }))
-                }
-              />
-              <LabeledRadioButton
-                className={styles.radioButton}
-                name="trading_instrument"
-                label="6E"
-                value="6E"
-                groupValue={data.instrument}
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    instrument: e.target.value,
-                  }))
-                }
-              />
-              <LabeledRadioButton
-                className={styles.radioButton}
-                name="trading_instrument"
-                label="6J"
-                value="6J"
-                groupValue={data.instrument}
-                onChange={(e) =>
-                  setData((prevData) => ({
-                    ...prevData,
-                    instrument: e.target.value,
+                    platform: e.target.value,
                   }))
                 }
               />
