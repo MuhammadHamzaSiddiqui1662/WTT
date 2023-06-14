@@ -60,7 +60,7 @@ export const useRoutes = () => {
       },
       {
         name: "Subscribe",
-        url: "/subscribe",
+        url: "/subscribe/:planId",
         component: Subscribe,
         visible: false,
       },

@@ -8,9 +8,12 @@ import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
 import { LabeledRadioButton } from "src/components/LabeledRadioButton/LabeledRadioButton";
 import { SubscribeModal } from "src/modals/SubscribeModal/SubscribeModal";
 import gateways from "src/assets/images/payment_gatways-logos.png";
+import { useParams } from "react-router-dom";
 
 export const Subscribe: FC = () => {
+  const { planId } = useParams();
   const [openModal, setOpenModal] = useState(false);
+
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -24,18 +27,20 @@ export const Subscribe: FC = () => {
     machinId: "",
     provider: "",
     platform: "",
+    planId: "",
   });
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user") || "");
     setData((prevData) => ({
       ...prevData,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      phone: user.phone,
+      firstName: user.firstName || "",
+      lastName: user.lastName || "",
+      email: user.email || "",
+      country: user.county || "",
+      planId: planId || "",
     }));
-  }, []);
+  }, [planId]);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();

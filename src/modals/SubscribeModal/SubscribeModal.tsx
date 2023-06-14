@@ -8,11 +8,11 @@ import { useFirebase } from "src/hooks/useFirebase";
 
 export const SubscribeModal = ({ handleClose, data }: { handleClose: () => void; data: any }) => {
   const [acceptTerms, setAcceptTerms] = useState(false);
-  const [planId, setPlanId] = useState("P-0FF265046G4913356MSA6IUA");
+  const [planId, setPlanId] = useState();
   const { createSubscriber } = useFirebase();
 
   useEffect(() => {
-    setPlanId("P-0FF265046G4913356MSA6IUA");
+    setPlanId(data.planId);
   }, [data]);
 
   const handleApprove = async (_data: any) => {
@@ -231,7 +231,7 @@ export const SubscribeModal = ({ handleClose, data }: { handleClose: () => void;
         value={`${acceptTerms}`}
         onChange={() => setAcceptTerms((prev) => !prev)}
       />
-      <PaypalSubscribeButton planId={planId} disabled={!acceptTerms} handleApprove={handleApprove} />
+      {planId && <PaypalSubscribeButton planId={planId} disabled={!acceptTerms} handleApprove={handleApprove} />}
     </ModalWrapper>
   );
 };
