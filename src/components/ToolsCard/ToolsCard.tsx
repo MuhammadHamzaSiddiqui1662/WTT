@@ -16,6 +16,7 @@ export const ToolsCard: FC<IProps> = ({
   image,
   alt,
   price,
+  planId,
   animation = "zoom-out",
   delay,
   duration,
@@ -41,7 +42,7 @@ export const ToolsCard: FC<IProps> = ({
       <div className={styles.caption}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.price}>Price: ${price}</p>
-        <Link to={"/subscribe"}>
+        <Link to={`/subscribe/${planId}`}>
           <Button
             fullwidth={true}
             data-aos="fade-up"
