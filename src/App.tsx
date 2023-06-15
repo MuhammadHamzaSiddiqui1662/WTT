@@ -12,7 +12,6 @@ import { InitialLoader } from "./components/InitialLoader/InitialLoader";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { Loader } from "./components/Loader/Loader";
 import { useAppSelector } from "./store";
-import { NotSignedInWrapper } from "./components/NotSignedInWrapper/NotSignedInWrapper";
 import { useFirebase } from "./hooks/useFirebase";
 import { NotSignedIn } from "./components/NotSignedIn/NotSignedIn";
 
