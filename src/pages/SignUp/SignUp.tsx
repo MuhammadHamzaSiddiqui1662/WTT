@@ -10,7 +10,7 @@ export const SignUp: FC = () => {
     firstName: "",
     lastName: "",
     email: "",
-    phone: "",
+    country: "",
     password: "",
     confirmPassword: "",
   });
@@ -21,7 +21,7 @@ export const SignUp: FC = () => {
     e.preventDefault();
     if (data.password !== data.confirmPassword) return alert("Password and Confirm Password need to be same");
     try {
-      await handleSignUp(data.email, data.password, data.firstName, data.lastName, data.phone);
+      await handleSignUp(data.email, data.password, data.firstName, data.lastName, data.country);
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -56,11 +56,11 @@ export const SignUp: FC = () => {
           onChange={(e) => setData((prevData) => ({ ...prevData, email: e.target.value }))}
         />
         <LabeledInput
-          label="Phone"
-          placeholder="Enter phone..."
+          label="Country"
+          placeholder="Enter country..."
           required={true}
-          value={data.phone}
-          onChange={(e) => setData((prevData) => ({ ...prevData, phone: e.target.value }))}
+          value={data.country}
+          onChange={(e) => setData((prevData) => ({ ...prevData, country: e.target.value }))}
         />
         <LabeledInput
           label="Password"
