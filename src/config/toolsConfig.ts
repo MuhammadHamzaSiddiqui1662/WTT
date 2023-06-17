@@ -1,5 +1,5 @@
 import { ToolsConfig } from "src/types";
-import graphImage from "src/assets/images/exampleGraph.webp";
+import graphImage from "src/assets/images/tools/exampleGraph.webp";
 
 export const toolsConfig: ToolsConfig[] = [
   {

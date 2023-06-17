@@ -1,5 +1,5 @@
 import { NotesConfig } from "src/types";
-import graphImage from "src/assets/images/exampleGraph.webp";
+import graphImage from "src/assets/images/notes/exampleGraph.webp";
 
 export const notesConfig: NotesConfig[] = [
   {
