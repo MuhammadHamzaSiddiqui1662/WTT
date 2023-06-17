@@ -5,5 +5,5 @@ export const initialOptions: ReactPayPalScriptOptions = {
   currency: "USD",
   intent: "subscription",
   vault: true,
-  "data-react-paypal-script-id": "abc",
+  "data-react-paypal-script-id": "wtt",
 };
