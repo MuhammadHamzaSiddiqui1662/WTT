@@ -5,7 +5,6 @@ import { LabeledInput } from "src/components/LabeledInput/LabeledInput";
 import { Page } from "src/components/Page/Page";
 import { Button } from "src/components/Button/Button";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
-import { LabeledRadioButton } from "src/components/LabeledRadioButton/LabeledRadioButton";
 import { SubscribeModal } from "src/modals/SubscribeModal/SubscribeModal";
 import gateways from "src/assets/images/payment_gatways-logos.png";
 import { useParams } from "react-router-dom";
