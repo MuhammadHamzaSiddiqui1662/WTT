@@ -41,6 +41,7 @@
   .toolsOption {
     width: 100%;
     text-align: left;
+    position: relative;
 
     .description {
       padding: 20px 0px 8px;
@@ -55,6 +56,13 @@
     width: 300px;
     margin-top: 24px;
   }
+}
+
+.error {
+  color: var(--color-error);
+  position: absolute;
+  top: 100%;
+  font-size: 12px;
 }
 
 .span2 {

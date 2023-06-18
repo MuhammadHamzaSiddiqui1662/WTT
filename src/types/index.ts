@@ -1,5 +1,3 @@
-import { FC, ReactNode } from "react";
-
 export interface Route {
   name: string;
   url: `/${string}`;
@@ -34,4 +32,11 @@ export interface InsightsConfig {
   heading: string;
   src: string;
   descriptions: string[];
+}
+
+export enum TradingPlatforms {
+  TradingView = "TradingView",
+  ThinkOrSwim = "ThinkOrSwim",
+  NinjaTraders = "NinjaTraders",
+  Sierrachart = "Sierrachart",
 }
