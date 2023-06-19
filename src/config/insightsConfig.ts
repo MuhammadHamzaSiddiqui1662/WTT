@@ -3,7 +3,7 @@ import { InsightsConfig } from "src/types";
 export const insightConfig: InsightsConfig[] = [
   {
     heading: "My Approach",
-    src: "",
+    src: "https://www.youtube.com/embed/VCWCddqniLA",
     descriptions: [
       `I am Jack. Born in Montreal, QC (Canada), I am a technology entrepreneur and investor, graduated from
               University of Quebec in Montreal, with a bachelor degree in business administration, I founded a
@@ -17,7 +17,7 @@ export const insightConfig: InsightsConfig[] = [
   },
   {
     heading: "My trading principles & rules",
-    src: "",
+    src: "https://youtu.be/VCWCddqniLA",
     descriptions: [
       `I am Jack. Born in Montreal, QC (Canada), I am a technology entrepreneur and investor, graduated from
               University of Quebec in Montreal, with a bachelor degree in business administration, I founded a
