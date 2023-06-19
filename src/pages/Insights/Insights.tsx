@@ -25,16 +25,6 @@ export const Insights: FC = () => {
         {insightConfig.map((insight, index) => (
           <section className={styles.section}>
             <SectionHeading heading={insight.heading} />
-            {/* <video
-              className={styles.video}
-              src={insight.src}
-              controls
-              controlsList="nodownload"
-              data-aos="fade-in"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-              data-aos-anchor-placement="top"
-            ></video> */}
             <iframe
               className={styles.video}
               src={`https://www.youtube.com/embed/${extractId(insight.src)}`}
