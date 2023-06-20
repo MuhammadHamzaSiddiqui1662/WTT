@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "src/assets/images/logo.png";
+import logo2 from "src/assets/images/logo_azur.png";
 import styles from "./NavBar.module.scss";
 import { RxHamburgerMenu } from "react-icons/rx";
 import OutsideClickHandler from "react-outside-click-handler";
@@ -21,7 +22,10 @@ export const NavBar: FC<IProps> = ({ className }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container + " " + className}>
-        <img className={styles.logo} src={logo} alt="logo" />
+        <div className={styles.logos}>
+          <img className={styles.logo1} src={logo} alt="wtt_logo" />
+          <img className={styles.logo2} src={logo2} alt="azur_logo" />
+        </div>
         <ul className={styles.routes}>
           {routes.map(
             (route) =>

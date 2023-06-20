@@ -12,8 +12,15 @@
   align-items: center;
 }
 
-.logo {
-  width: 280px;
+.logos {
+  display: flex;
+  align-items: center;
+  .logo1 {
+    width: 260px;
+  }
+  .logo2 {
+    width: 70px;
+  }
 }
 
 .menuIcon {
@@ -106,8 +113,13 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .logo {
-    width: 200px;
+  .logos {
+    .logo1 {
+      width: 200px;
+    }
+    .logo2 {
+      width: 50px;
+    }
   }
   .routes {
     display: none;
