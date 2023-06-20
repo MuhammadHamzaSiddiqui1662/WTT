@@ -20,12 +20,11 @@ export const MeAndMyEdge: FC = () => {
               data-aos-anchor-placement="top-bottom"
             >
               <p>
-                I am Jack. Born in Montreal, QC (Canada), I am a technology entrepreneur and investor, graduated from
-                University of Quebec in Montreal, with a bachelor degree in business administration, I founded a
-                consulting firm in technology at 28, which I sold to a major Canadian public listed company few years
-                later. While taking some project management contracts in merger & acquisition field as a freelancer, I
-                started to invest my money in several investment vehicules such as venture capital, bonds, stocks, and
-                futures.
+                My name is Jack, a Montreal-born technology entrepreneur and investor, and hold a Bachelor's degree in
+                Business Administration. At the age of 28, I founded my consulting firm that specialized in technology,
+                which later became the property of a major Canadian public listed company. Alongside my project
+                management contracts in merger and acquisition as a freelancer, I ventured into investing my resources
+                in several investment vehicles such as venture capital, bonds, stocks, and futures.
               </p>
               <p>
                 As for most of us, trading is the beginning was pretty challenging and I figured that it was necessary
