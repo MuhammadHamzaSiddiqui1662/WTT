@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { Contact } from "src/pages/Contact/Contact";
 import { Home } from "src/pages/Home/Home";
-import { Insights } from "src/pages/Insights/Insights";
+// import { Insights } from "src/pages/Insights/Insights";
 import { MeAndMyEdge } from "src/pages/MeAndMyEdge/MeAndMyEdge";
 import { Notes } from "src/pages/Notes/Notes";
 import { Login } from "src/pages/Login/Login";
@@ -13,6 +13,7 @@ import { SignUp } from "src/pages/SignUp/SignUp";
 import { useFirebase } from "./useFirebase";
 import { useAppDispatch } from "src/store";
 import { setSplashHide } from "src/state/Status/StatusSlice";
+import { Discord } from "src/pages/Discord/Discord";
 
 export const useRoutes = () => {
   const { user } = useFirebase();
@@ -34,10 +35,16 @@ export const useRoutes = () => {
         component: MeAndMyEdge,
         visible: true,
       },
+      // {
+      //   name: "Insights",
+      //   url: "/insights",
+      //   component: Insights,
+      //   visible: user !== null,
+      // },
       {
-        name: "Insights",
-        url: "/insights",
-        component: Insights,
+        name: "Discord",
+        url: "/discord",
+        component: Discord,
         visible: user !== null,
       },
       {

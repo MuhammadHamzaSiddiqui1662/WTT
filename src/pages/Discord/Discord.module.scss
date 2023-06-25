@@ -1,0 +1,57 @@
+.container {
+  padding: 0px 24px;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  color: var(--color-grey);
+}
+
+.leftSpan {
+  width: 60%;
+  padding: 60px;
+  font-size: 18px;
+  p,
+  button {
+    margin: 20px 0px;
+  }
+}
+
+.rightSpan {
+  width: 40%;
+  text-align: center;
+}
+
+.discordLogo {
+  width: 80%;
+}
+
+@media only screen and (max-width: 768px) {
+  .section {
+    flex-direction: column-reverse;
+  }
+
+  .leftSpan {
+    width: 100%;
+    padding-top: 0px;
+    text-align: justify;
+    font-size: 16px;
+  }
+
+  .rightSpan {
+    padding-top: 30px;
+    width: 100%;
+  }
+
+  .discordLogo {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .leftSpan {
+    padding: 0px;
+    font-size: 14px;
+  }
+}
