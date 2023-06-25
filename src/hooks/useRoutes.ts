@@ -83,12 +83,6 @@ export const useRoutes = () => {
         component: SignUp,
         visible: !user,
       },
-      {
-        name: "Forgot Password",
-        url: "/forgot-password",
-        component: ForgotPassword,
-        visible: false,
-      },
     ],
     [user]
   );

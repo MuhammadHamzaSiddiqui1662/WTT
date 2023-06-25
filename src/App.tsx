@@ -14,6 +14,7 @@ import { Loader } from "./components/Loader/Loader";
 import { useAppSelector } from "./store";
 import { useFirebase } from "./hooks/useFirebase";
 import { NotSignedIn } from "./components/NotSignedIn/NotSignedIn";
+import { ForgotPassword } from "./pages/ForgotPassword/ForgotPassword";
 
 function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ function App() {
                   Component={route.visible || user ? route.component : NotSignedIn}
                 />
               ))}
+              <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
