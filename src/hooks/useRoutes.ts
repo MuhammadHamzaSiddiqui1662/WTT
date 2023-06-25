@@ -8,7 +8,6 @@ import { Login } from "src/pages/Login/Login";
 import { Subscribe } from "src/pages/Subscribe/Subscribe";
 import { Tools } from "src/pages/Tools/Tools";
 import { Route } from "src/types";
-import { ForgotPassword } from "src/pages/ForgotPassword/ForgotPassword";
 import { SignUp } from "src/pages/SignUp/SignUp";
 import { useFirebase } from "./useFirebase";
 import { useAppDispatch } from "src/store";
