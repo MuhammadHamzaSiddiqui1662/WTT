@@ -29,7 +29,7 @@ export const Discord: FC = () => {
               Join us on our journey to develop a profitable and supportive trading community as we maximize our trading
               success with Azur.
             </p>
-            <a href="https://t.co/HP1yG783BL" target="_blank">
+            <a href="https://t.co/HP1yG783BL" target="_blank" rel="noreferrer">
               <Button>Join Discord</Button>
             </a>
           </div>
