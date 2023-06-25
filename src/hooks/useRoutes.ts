@@ -1,9 +1,9 @@
 import { useEffect, useMemo } from "react";
 import { Contact } from "src/pages/Contact/Contact";
 import { Home } from "src/pages/Home/Home";
-// import { Insights } from "src/pages/Insights/Insights";
+import { Insights } from "src/pages/Insights/Insights";
 import { MeAndMyEdge } from "src/pages/MeAndMyEdge/MeAndMyEdge";
-import { Notes } from "src/pages/Notes/Notes";
+// import { Notes } from "src/pages/Notes/Notes";
 import { Login } from "src/pages/Login/Login";
 import { Subscribe } from "src/pages/Subscribe/Subscribe";
 import { Tools } from "src/pages/Tools/Tools";
@@ -35,12 +35,12 @@ export const useRoutes = () => {
         component: MeAndMyEdge,
         visible: true,
       },
-      // {
-      //   name: "Insights",
-      //   url: "/insights",
-      //   component: Insights,
-      //   visible: user !== null,
-      // },
+      {
+        name: "Insights",
+        url: "/insights",
+        component: Insights,
+        visible: user !== null,
+      },
       {
         name: "Discord",
         url: "/discord",
@@ -53,12 +53,12 @@ export const useRoutes = () => {
         component: Tools,
         visible: user !== null,
       },
-      {
-        name: "Notes",
-        url: "/notes",
-        component: Notes,
-        visible: user !== null,
-      },
+      // {
+      //   name: "Notes",
+      //   url: "/notes",
+      //   component: Notes,
+      //   visible: user !== null,
+      // },
       {
         name: "Contact Us",
         url: "/contact-us",
