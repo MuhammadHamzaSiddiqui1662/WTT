@@ -4,6 +4,7 @@ import { PageHeading } from "src/components/PageHeading/PageHeading";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
 import DP from "src/assets/images/owner.jpg";
 import { Page } from "src/components/Page/Page";
+import logo from "src/assets/images/logo_azur.png";
 
 export const MeAndMyEdge: FC = () => {
   return (
@@ -44,16 +45,15 @@ export const MeAndMyEdge: FC = () => {
         <section className={styles.section}>
           <SectionHeading heading="My Edge" />
           <div className={styles.sectionMyEdge}>
-            <video
-              className={styles.video}
-              src={""}
-              controls
-              controlsList="nodownload"
+            <img
+              src={logo}
+              className={styles.logo}
+              alt="logo"
               data-aos="fade-in"
               data-aos-delay="100"
               data-aos-duration="1000"
               data-aos-anchor-placement="top"
-            ></video>
+            />
             <div
               className={styles.description}
               data-aos="fade-right"
