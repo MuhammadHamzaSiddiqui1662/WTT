@@ -21,6 +21,120 @@
 .listExtra {
   color: var(--color-grey);
 }
+
+.toolsTableSection {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  --color-blue: #2e75b5;
+  --color-lightBlue: #79a3df;
+  --color-green: #00b050;
+  --color-lightGreen: #a8d08d;
+  --color-orange: #ed7d31;
+  --color-yellow: #ffc000;
+
+  width: 100%;
+  border-radius: 10px;
+  border-spacing: 0px;
+  overflow: hidden;
+  border: 2px solid var(--color-blue);
+  font-size: 14px;
+  color: var(--color-grey);
+
+  th,
+  td {
+    border: 2px solid var(--color-blue);
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  tbody {
+    color: var(--color-black);
+    .tableData {
+      font-size: 10px;
+      padding: 2px 8px;
+      min-width: 300px;
+    }
+  }
+}
+
+.tableRow {
+  height: 24px;
+  background-color: var(--color-white);
+
+  &:nth-child(even) {
+    background-color: #c3d6f0;
+  }
+}
+
+.tableData {
+  padding: 8px 24px;
+  height: inherit;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header {
+  color: var(--color-white);
+  font-weight: 700;
+
+  .heading {
+    font-size: 14px;
+    height: 50px;
+    justify-content: center;
+
+    .transitionDelay {
+      transition-duration: 0.3s;
+    }
+    .rotate {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .subHeading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0px;
+    padding: 8px;
+    font-size: 12px;
+
+    .price {
+      font-size: 10px;
+      min-width: 100px;
+    }
+  }
+}
+
+.levels {
+  background-color: var(--color-blue);
+}
+
+.backTest {
+  background-color: var(--color-lightBlue);
+}
+
+.alerts {
+  background-color: var(--color-green);
+}
+
+.robot {
+  background-color: var(--color-orange);
+}
+
+.yellow {
+  background-color: var(--color-yellow);
+}
+
+.lightGreen {
+  background-color: var(--color-lightGreen);
+}
+
 .toolCards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -38,10 +152,16 @@
   .toolCards {
     grid-template-columns: 1fr;
   }
+  .table {
+    font-size: 14px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .section {
     padding: 0px 4px;
+  }
+  .tableData {
+    padding: 8px 12px;
   }
 }
