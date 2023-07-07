@@ -2,10 +2,9 @@ import { FC } from "react";
 import styles from "./Tools.module.scss";
 import { PageHeading } from "src/components/PageHeading/PageHeading";
 import { SectionHeading } from "src/components/SectionHeading/SectionHeading";
-import { ToolsCard } from "src/components/ToolsCard/ToolsCard";
-import graphImage from "src/assets/images/exampleGraph.webp";
+import graphImage from "src/assets/images/promo_sample.jpg";
 import { Page } from "src/components/Page/Page";
-import { toolsConfig } from "src/config/toolsConfig";
+import { Link } from "react-router-dom";
 
 export const Tools: FC = () => {
   return (
@@ -89,62 +88,81 @@ export const Tools: FC = () => {
                 </tr>
                 <tr className={styles.header}>
                   <th className={styles.levels}>
-                    <div className={styles.tableData + " " + styles.subHeading}>
-                      <div className={styles.type}>BASIC</div>
-                      <div className={styles.price}>(from $25/mth)</div>
-                    </div>
+                    <Link to={`/subscribe/P-0FF265046G4913356MSA6IUA`}>
+                      <div className={styles.tableData + " " + styles.subHeading}>
+                        <div className={styles.type}>BASIC</div>
+                        <div className={styles.price}>(from $25/mth)</div>
+                      </div>
+                    </Link>
                   </th>
                   <th className={styles.levels}>
-                    <div className={styles.tableData + " " + styles.subHeading}>
-                      <div className={styles.type}>ADVANCED</div>
-                      <div className={styles.price}>(from $50/mth)</div>
-                    </div>
+                    <Link to={`/subscribe/P-0FF265046G4913356MSA6IUA`}>
+                      <div className={styles.tableData + " " + styles.subHeading}>
+                        <div className={styles.type}>ADVANCED</div>
+                        <div className={styles.price}>(from $50/mth)</div>
+                      </div>
+                    </Link>
                   </th>
                   <th className={styles.levels}>
-                    <div className={styles.tableData + " " + styles.subHeading}>
-                      <div className={styles.type}>EXPERT</div>
-                      <div className={styles.price}>(from $75/mth)</div>
-                    </div>
+                    <Link to={`/subscribe/P-0FF265046G4913356MSA6IUA`}>
+                      <div className={styles.tableData + " " + styles.subHeading}>
+                        <div className={styles.type}>EXPERT</div>
+                        <div className={styles.price}>(from $75/mth)</div>
+                      </div>
+                    </Link>
                   </th>
                   <th className={styles.backTest}>
-                    <div className={styles.tableData + " " + styles.subHeading}>
-                      <div className={styles.type}>BACK TEST ADVANCED</div>
-                      <div className={styles.price}>(from $100/life)</div>
-                    </div>
+                    <Link to={`/subscribe/P-0FF265046G4913356MSA6IUA`}>
+                      <div className={styles.tableData + " " + styles.subHeading}>
+                        <div className={styles.type}>BACK TEST ADVANCED</div>
+                        <div className={styles.price}>(from $100/life)</div>
+                      </div>
+                    </Link>
                   </th>
                   <th className={styles.backTest}>
-                    <div className={styles.tableData + " " + styles.subHeading}>
-                      <div className={styles.type}>BACK TEST EXPERT</div>
-                      <div className={styles.price}>(from $150/life)</div>
-                    </div>
+                    <Link to={`/subscribe/P-0FF265046G4913356MSA6IUA`}>
+                      <div className={styles.tableData + " " + styles.subHeading}>
+                        <div className={styles.type}>BACK TEST EXPERT</div>
+                        <div className={styles.price}>(from $150/life)</div>
+                      </div>
+                    </Link>
                   </th>
                   <th className={styles.alerts}>
-                    <div className={styles.tableData + " " + styles.subHeading}>
-                      <div className={styles.type}>ADVANCED</div>
-                      <div className={styles.price}>(from $200/mth)</div>
-                    </div>
+                    <Link to={`/subscribe/P-0FF265046G4913356MSA6IUA`}>
+                      <div className={styles.tableData + " " + styles.subHeading}>
+                        <div className={styles.type}>ADVANCED</div>
+                        <div className={styles.price}>(from $200/mth)</div>
+                      </div>
+                    </Link>
                   </th>
                   <th className={styles.alerts}>
-                    <div className={styles.tableData + " " + styles.subHeading}>
-                      <div className={styles.type}>EXPERT</div>
-                      <div className={styles.price}>(from $300/mth)</div>
-                    </div>
+                    <Link to={`/subscribe/P-0FF265046G4913356MSA6IUA`}>
+                      <div className={styles.tableData + " " + styles.subHeading}>
+                        <div className={styles.type}>EXPERT</div>
+                        <div className={styles.price}>(from $300/mth)</div>
+                      </div>
+                    </Link>
                   </th>
                   <th className={styles.robot}>
-                    <div className={styles.tableData + " " + styles.subHeading}>
-                      <div className={styles.type}>ADVANCED</div>
-                      <div className={styles.price}>(TBD)</div>
-                    </div>
+                    <Link to={`/subscribe/P-0FF265046G4913356MSA6IUA`}>
+                      <div className={styles.tableData + " " + styles.subHeading}>
+                        <div className={styles.type}>ADVANCED</div>
+                        <div className={styles.price}>(TBD)</div>
+                      </div>
+                    </Link>
                   </th>
                   <th className={styles.robot}>
-                    <div className={styles.tableData + " " + styles.subHeading}>
-                      <div className={styles.type}>EXPERT</div>
-                      <div className={styles.price}>(TBD)</div>
-                    </div>
+                    <Link to={`/subscribe/P-0FF265046G4913356MSA6IUA`}>
+                      <div className={styles.tableData + " " + styles.subHeading}>
+                        <div className={styles.type}>EXPERT</div>
+                        <div className={styles.price}>(TBD)</div>
+                      </div>
+                    </Link>
                   </th>
                 </tr>
               </thead>
               <tbody>
+                {/* Features */}
                 <tr className={styles.tableRow + " " + styles.yellow}>
                   <td>
                     <div className={styles.tableData} style={{ fontWeight: "bold" }}>
@@ -287,6 +305,7 @@ export const Tools: FC = () => {
                   <td></td>
                   <td></td>
                 </tr>
+                {/* Special Features */}
                 <tr className={styles.tableRow + " " + styles.yellow}>
                   <td>
                     <div className={styles.tableData} style={{ fontWeight: "bold" }}>
@@ -401,6 +420,7 @@ export const Tools: FC = () => {
                   <td></td>
                   <td></td>
                 </tr>
+                {/* Included */}
                 <tr className={styles.tableRow + " " + styles.yellow}>
                   <td>
                     <div className={styles.tableData} style={{ fontWeight: "bold" }}>
@@ -459,6 +479,7 @@ export const Tools: FC = () => {
                   <td>P</td>
                   <td>P</td>
                 </tr>
+                {/* Pricing */}
                 <tr className={styles.tableRow + " " + styles.lightGreen}>
                   <td>
                     <div className={styles.tableData} style={{ fontWeight: "bold" }}>
@@ -577,7 +598,7 @@ export const Tools: FC = () => {
             </table>
           </div>
         </section>
-        {toolsConfig.map((section, index) => (
+        {/* {toolsConfig.map((section, index) => (
           <section key={index} className={styles.section}>
             <SectionHeading heading={section.sectionHeading} />
             <div className={styles.toolCards}>
@@ -593,7 +614,7 @@ export const Tools: FC = () => {
               ))}
             </div>
           </section>
-        ))}
+        ))} */}
       </div>
     </Page>
   );
