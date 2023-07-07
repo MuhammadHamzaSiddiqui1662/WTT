@@ -22,6 +22,32 @@
   color: var(--color-grey);
 }
 
+.promoSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px;
+
+  .image {
+    width: 90%;
+    max-width: 450px;
+    margin-bottom: 24px;
+  }
+
+  .heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--color-primary);
+  }
+
+  .helperText {
+    font-size: 24px;
+    color: var(--color-grey);
+  }
+}
+
 .toolsTableSection {
   width: 100%;
   overflow-x: auto;
@@ -49,6 +75,10 @@
     border-collapse: collapse;
     text-align: center;
     font-size: 10px;
+
+    a {
+      color: var(--color-white);
+    }
   }
 
   tbody {
@@ -103,6 +133,12 @@
     gap: 0px;
     padding: 8px;
     font-size: 12px;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
 
     .price {
       font-size: 10px;
@@ -163,5 +199,13 @@
   }
   .tableData {
     padding: 8px 12px;
+  }
+  .promoSection {
+    .heading {
+      font-size: 32px;
+    }
+    .helperText {
+      font-size: 18px;
+    }
   }
 }

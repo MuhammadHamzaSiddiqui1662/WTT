@@ -12,6 +12,24 @@ export const Tools: FC = () => {
       <div className={styles.container}>
         <PageHeading heading={"Tools"} description="" />
         <section className={styles.section}>
+          <div className={styles.promoSection}>
+            <img
+              className={styles.image}
+              src={graphImage}
+              alt="promo"
+              data-aos="fade-up"
+              data-aos-delay={300}
+              data-aos-duration={1000}
+            />
+            <p className={styles.heading} data-aos="fade-up" data-aos-delay={300} data-aos-duration={1000}>
+              This Is Promo Heading
+            </p>
+            <p className={styles.helperText} data-aos="fade-up" data-aos-delay={300} data-aos-duration={1000}>
+              This is the helper text for this promo campaign
+            </p>
+          </div>
+        </section>
+        <section className={styles.section}>
           <SectionHeading heading="Levels Premium tools - What that includes" />
           <p
             className={styles.para}
