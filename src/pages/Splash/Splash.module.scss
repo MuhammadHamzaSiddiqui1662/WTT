@@ -10,14 +10,23 @@
   background-color: var(--background-primary);
   background: url(../../assets/images/bg.png) no-repeat 50% 50%, var(--background-primary);
   background-size: cover;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   padding: 24px;
   transition: 1s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &.hide {
     transform: translateY(-100%);
   }
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .leftSide {
@@ -33,7 +42,7 @@
 }
 
 @media only screen and (max-width: 650px) {
-  .container {
+  .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -12,21 +12,23 @@ export const SplashPage: FC<IProps> = () => {
   const dispatch = useAppDispatch();
   return (
     <div className={`${styles.container} ${splashHide && styles.hide}`}>
-      <div className={styles.leftSide}>
-        <img className={styles.logo} src={logo} alt="" />
-        <p className={styles.text}>
-          Looking to be part of my World Triangle community of traders. I’m here to share my knowledge, insights,
-          experience to enhance traders skills. Also to lend my edge to help traders progress towards success.{" "}
-        </p>
-        <Button
-          className={styles.button}
-          onClick={() => {
-            window.scrollTo(0, 0);
-            dispatch(setSplashHide(true));
-          }}
-        >
-          Join the community now!
-        </Button>
+      <div className={styles.wrapper}>
+        <div className={styles.leftSide}>
+          <img className={styles.logo} src={logo} alt="" />
+          <p className={styles.text}>
+            Looking to be part of my World Triangle community of traders. I’m here to share my knowledge, insights,
+            experience to enhance traders skills. Also to lend my edge to help traders progress towards success.{" "}
+          </p>
+          <Button
+            className={styles.button}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              dispatch(setSplashHide(true));
+            }}
+          >
+            Join the community now!
+          </Button>
+        </div>
       </div>
     </div>
   );
