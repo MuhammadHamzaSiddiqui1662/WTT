@@ -68,7 +68,7 @@ a {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: var(--color-primary);
   border-radius: 10px;
 }
 

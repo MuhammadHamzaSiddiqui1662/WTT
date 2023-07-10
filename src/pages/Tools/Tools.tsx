@@ -4,6 +4,7 @@ import { PageHeading } from "src/components/PageHeading/PageHeading";
 import graphImage from "src/assets/images/promo_sample.jpg";
 import { Page } from "src/components/Page/Page";
 import { Link } from "react-router-dom";
+import logo from "src/assets/images/logo_azur.png";
 
 export const Tools: FC = () => {
   return (
@@ -34,7 +35,9 @@ export const Tools: FC = () => {
               <thead>
                 <tr className={styles.header}>
                   <th rowSpan={2}>
-                    <div className={styles.tableData + " " + styles.heading}></div>
+                    <div className={styles.tableData + " " + styles.heading}>
+                      <img className={styles.logo} src={logo} alt="logo" />
+                    </div>
                   </th>
                   <th colSpan={5} className={styles.levels}>
                     <div className={styles.tableData + " " + styles.heading}>AZUR LEVELS</div>
@@ -143,13 +146,13 @@ export const Tools: FC = () => {
                   <td>
                     <div className={styles.tableData}>Daily levels (before market open)</div>
                   </td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -157,13 +160,13 @@ export const Tools: FC = () => {
                   <td>
                     <div className={styles.tableData}>Shows the main key levels (LIS, Bulls/Bears gates)</div>
                   </td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -171,13 +174,13 @@ export const Tools: FC = () => {
                   <td>
                     <div className={styles.tableData}>Default colors for all levels type</div>
                   </td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -185,13 +188,13 @@ export const Tools: FC = () => {
                   <td>
                     <div className={styles.tableData}>Shows daily targets</div>
                   </td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -200,12 +203,12 @@ export const Tools: FC = () => {
                     <div className={styles.tableData}>Shows all 7 key levels</div>
                   </td>
                   <td></td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -214,12 +217,12 @@ export const Tools: FC = () => {
                     <div className={styles.tableData}>Extended daily levels (no max)</div>
                   </td>
                   <td></td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -228,12 +231,12 @@ export const Tools: FC = () => {
                     <div className={styles.tableData}>Integrated weekly & monthly levels</div>
                   </td>
                   <td></td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -242,12 +245,12 @@ export const Tools: FC = () => {
                     <div className={styles.tableData}>Shows which timeframe players on each key level</div>
                   </td>
                   <td></td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -287,12 +290,12 @@ export const Tools: FC = () => {
                     <div className={styles.tableData}>Bias box showing who is in control (LT, IT, ST and CP)</div>
                   </td>
                   <td></td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -301,12 +304,12 @@ export const Tools: FC = () => {
                     <div className={styles.tableData}>Moving levels</div>
                   </td>
                   <td></td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -316,11 +319,11 @@ export const Tools: FC = () => {
                   </td>
                   <td></td>
                   <td></td>
-                  <td>P</td>
+                  <td>✅</td>
                   <td></td>
-                  <td>P</td>
+                  <td>✅</td>
                   <td></td>
-                  <td>P</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -333,8 +336,8 @@ export const Tools: FC = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -348,7 +351,7 @@ export const Tools: FC = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td>P</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -361,8 +364,8 @@ export const Tools: FC = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -376,7 +379,7 @@ export const Tools: FC = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td>P</td>
+                  <td>✅</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -401,43 +404,43 @@ export const Tools: FC = () => {
                   <td>
                     <div className={styles.tableData}>Discord room (channels, insights, nuggets, etc.)</div>
                   </td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                 </tr>
                 <tr className={styles.tableRow}>
                   <td>
                     <div className={styles.tableData}>Videos (education)</div>
                   </td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                 </tr>
                 <tr className={styles.tableRow}>
                   <td>
                     <div className={styles.tableData}>Support</div>
                   </td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
-                  <td>P</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
                 </tr>
                 {/* Pricing */}
                 <tr className={styles.tableRow + " " + styles.lightGreen}>
