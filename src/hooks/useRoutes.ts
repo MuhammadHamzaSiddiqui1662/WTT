@@ -38,7 +38,8 @@ export const useRoutes = () => {
         name: "Insights",
         url: "/insights",
         component: Insights,
-        visible: user !== null,
+        // visible: user !== null,
+        visible: false,
       },
       {
         name: "Discord",
