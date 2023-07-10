@@ -10,7 +10,7 @@ export const MeAndMyEdge: FC = () => {
   return (
     <Page>
       <div className={styles.container}>
-        <PageHeading heading={"Me and My Edge"} description="" />
+        <PageHeading heading={"Me and My edge"} description="" />
         <section className={styles.section}>
           <SectionHeading heading="Me" />
           <div className={styles.sectionMe}>
@@ -43,7 +43,7 @@ export const MeAndMyEdge: FC = () => {
           </div>
         </section>
         <section className={styles.section}>
-          <SectionHeading heading="My Edge" />
+          <SectionHeading heading="My edge" />
           <div className={styles.sectionMyEdge}>
             <img
               src={logo}

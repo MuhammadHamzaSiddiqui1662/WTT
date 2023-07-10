@@ -10,7 +10,6 @@
 .sectionMe {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  align-items: center;
 }
 
 .description {
@@ -25,7 +24,7 @@
 .dp {
   width: 260px;
   height: 260px;
-  margin: 0px auto;
+  margin: 24px auto;
   overflow: hidden;
   border-radius: 50%;
   img {
@@ -36,18 +35,14 @@
 }
 
 .sectionMyEdge {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
   text-align: center;
-}
-
-.video {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  padding: 0px 16px;
 }
 
 .logo {
   width: 300px;
+  margin-top: 24px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -66,6 +61,7 @@
   .sectionMe {
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
   }
   .dp {
     width: 200px;
@@ -75,7 +71,9 @@
   .description {
     padding: 16px 0px;
   }
-  .video {
-    padding: 0px;
+  .sectionMyEdge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
