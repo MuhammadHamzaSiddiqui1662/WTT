@@ -6,7 +6,7 @@ import { Page } from "src/components/Page/Page";
 import { LabeledTextarea } from "src/components/LabeledTextarea/LabeledTextarea";
 import { Button } from "src/components/Button/Button";
 
-const WTT_EMAIL_ADDRESS = "testing@tester.com";
+const WTT_EMAIL_ADDRESS = "contact@azurwtt.com";
 const EMAIL_SUBJECT = ``;
 
 export const Contact: FC = () => {
@@ -36,8 +36,8 @@ export const Contact: FC = () => {
           <p className={styles.punchLine}>GET IN TOUCH</p>
           <h1 className={styles.heading}>Have any questions?</h1>
           <p className={styles.description}>
-            World Triangle Traders offers an uncompatible and modern approach & tools towards trading as customer ease
-            is our number 1 priority. You can now avail our resources with just a click.
+            Azur WTT offers a modern approach & tools towards trading as customer ease is our number 1 priority. You can
+            now avail our resources with just a click.
           </p>
           <form className={styles.form} onSubmit={handleSubmit}>
             <LabeledInput
