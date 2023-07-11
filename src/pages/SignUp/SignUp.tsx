@@ -11,6 +11,8 @@ export const SignUp: FC = () => {
     lastName: "",
     email: "",
     country: "",
+    twitterHandle: "",
+    discordName: "",
     password: "",
     confirmPassword: "",
   });
@@ -61,6 +63,20 @@ export const SignUp: FC = () => {
           required={true}
           value={data.country}
           onChange={(e) => setData((prevData) => ({ ...prevData, country: e.target.value }))}
+        />
+        <LabeledInput
+          label="Twitter Handle"
+          placeholder="Enter twitter handle..."
+          required={false}
+          value={data.twitterHandle}
+          onChange={(e) => setData((prevData) => ({ ...prevData, twitterHandle: e.target.value }))}
+        />
+        <LabeledInput
+          label="Discord Name"
+          placeholder="Enter discord name..."
+          required={false}
+          value={data.discordName}
+          onChange={(e) => setData((prevData) => ({ ...prevData, discordName: e.target.value }))}
         />
         <LabeledInput
           label="Password"
