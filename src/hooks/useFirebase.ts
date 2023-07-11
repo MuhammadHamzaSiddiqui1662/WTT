@@ -50,7 +50,15 @@ export const useFirebase = () => {
   );
 
   const handleSignUp = useCallback(
-    async (email: string, password: string, firstName: string, lastname: string, phone: string) => {
+    async (
+      email: string,
+      password: string,
+      firstName: string,
+      lastname: string,
+      phone: string,
+      twitterHandle: string,
+      discordName: string
+    ) => {
       dispatch(setLoading(true));
       try {
         const user = await createUserWithEmailAndPassword(email, password);
@@ -61,6 +69,8 @@ export const useFirebase = () => {
           firstName,
           lastname,
           phone,
+          twitterHandle,
+          discordName,
         });
       } catch (error: any) {
         throw new Error(error);

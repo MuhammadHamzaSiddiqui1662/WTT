@@ -23,7 +23,15 @@ export const SignUp: FC = () => {
     e.preventDefault();
     if (data.password !== data.confirmPassword) return alert("Password and Confirm Password need to be same");
     try {
-      await handleSignUp(data.email, data.password, data.firstName, data.lastName, data.country);
+      await handleSignUp(
+        data.email,
+        data.password,
+        data.firstName,
+        data.lastName,
+        data.country,
+        data.twitterHandle,
+        data.discordName
+      );
       navigate("/");
     } catch (error) {
       console.log(error);
