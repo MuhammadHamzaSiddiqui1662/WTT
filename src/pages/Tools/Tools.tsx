@@ -5,6 +5,7 @@ import graphImage from "src/assets/images/promo_sample.jpg";
 import { Page } from "src/components/Page/Page";
 import { Link } from "react-router-dom";
 import logo from "src/assets/images/logo_azur.png";
+import scrollRight from "src/assets/images/scrollRightBlue.png";
 
 export const Tools: FC = () => {
   return (
@@ -30,6 +31,14 @@ export const Tools: FC = () => {
           </div>
         </section>
         <section className={styles.section}>
+          <img
+            className={styles.scroll}
+            src={scrollRight}
+            alt="scroll right"
+            data-aos="fade-right"
+            data-aos-delay={400}
+            data-aos-duration={1000}
+          />
           <div className={styles.toolsTableSection}>
             <table className={styles.table}>
               <thead>
